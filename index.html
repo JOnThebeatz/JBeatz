@@ -24,12 +24,12 @@
       padding: 1rem 2rem;
       background: #1f1f1f;
       box-sizing: border-box;
+      position: relative;
     }
 
     .logo-left {
       max-width: 200px;
       height: auto;
-      margin: 0 auto;
     }
 
     .logo-center {
@@ -51,7 +51,7 @@
 
     .insta-handle {
       color: white;
-      font-weight: 300;
+      font-weight: 500; /* Thicker font */
       font-size: 14px;
     }
 
@@ -125,16 +125,19 @@
 </head>
 <body>
   <header>
-    <div style="width: 20px;"></div> <!-- Spacer to keep layout symmetrical -->
-
-    <div class="logo-center">
-      <img src="JBeatsLogo.png" alt="JBeats Logo" class="logo-left">
-    </div>
-
+    <!-- Instagram on the left -->
     <div class="insta-box">
       <img src="InstagramLogo.png" alt="Instagram Logo" class="logo-right">
       <span class="insta-handle">@JBeatzShop</span>
     </div>
+
+    <!-- Main logo centered -->
+    <div class="logo-center">
+      <img src="JBeatsLogo.png" alt="JBeats Logo" class="logo-left">
+    </div>
+
+    <!-- Spacer to balance layout -->
+    <div style="width: 100px;"></div>
   </header>
 
   <section class="beats">
