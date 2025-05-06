@@ -28,14 +28,14 @@
     .beats {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: 1.5rem; /* Reduced gap between beats */
       width: 100%;
-      max-width: 600px; /* Make the overall beat block smaller */
+      max-width: 500px; /* Made the beat block smaller horizontally */
       padding: 1rem;
     }
     .beat {
       background: #333; /* Dark grey background for the beat block */
-      padding: 1rem;
+      padding: 0.75rem; /* Reduced padding for a smaller size */
       border-radius: 8px;
       display: flex;
       flex-direction: column;
@@ -45,24 +45,27 @@
     .beat h2 {
       margin: 0.5rem 0;
       color: #a78bfd; /* Lighter purple color */
+      font-size: 1.2rem; /* Reduced font size */
     }
     .beat .info-box {
       margin-top: 1rem;
       color: red; /* Red text for info */
+      font-size: 0.9rem; /* Reduced font size */
     }
     .beat audio {
       width: 100%;
-      margin: 1rem 0;
+      margin: 0.75rem 0; /* Reduced margin */
     }
     .button {
       display: inline-block;
       margin-top: 1rem;
       background: #2a9d8f; /* Green color for the button */
       color: white;
-      padding: 0.75rem 1.5rem;
+      padding: 0.6rem 1.2rem; /* Reduced padding for the button */
       text-decoration: none;
       border-radius: 4px;
       font-weight: bold;
+      font-size: 0.9rem; /* Reduced font size for the button */
     }
     footer {
       margin: auto 0 1rem;
