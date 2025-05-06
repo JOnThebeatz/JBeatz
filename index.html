@@ -55,13 +55,16 @@
       font-size: 17px;
     }
 
+    /* Beat section aligned to the left */
     .beats {
-      display: grid;
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* Align everything to the left */
       gap: 1.5rem;
       width: 100%;
       max-width: 500px;
       padding: 1rem;
+      margin-left: 20px; /* Add left margin to give it some spacing from the edge */
     }
 
     .beat {
@@ -80,7 +83,6 @@
       font-size: 1.2rem;
     }
 
-    /* Custom Spotify-like audio player */
     .audio-player {
       width: 100%;
       height: 40px;
