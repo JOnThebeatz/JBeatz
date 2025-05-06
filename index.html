@@ -18,18 +18,23 @@
     header {
       width: 100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: center; /* Center the main logo */
       align-items: center;
       padding: 1rem 2rem;
       background: #1f1f1f;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center; /* Align logos vertically centered */
     }
     header img.logo-left {
       max-width: 200px;
       height: auto;
     }
     header img.logo-right {
-      max-width: 100px; /* Adjust size for the right logo */
+      max-width: 100px; /* Adjust size for the Instagram logo */
       height: auto;
+      margin-left: 20px; /* Space between the logos */
     }
     .beats {
       display: grid;
@@ -93,10 +98,13 @@
 </head>
 <body>
   <header>
-    <!-- Left logo -->
-    <img src="JBeatsLogo.png" alt="JBeats Logo" class="logo-left">
-    <!-- Right logo (Instagram logo) -->
-    <img src="InstagramLogo.png" alt="Instagram Logo" class="logo-right">
+    <!-- Logo container holding both logos -->
+    <div class="logo-container">
+      <!-- Left logo (main logo) -->
+      <img src="JBeatsLogo.png" alt="JBeats Logo" class="logo-left">
+      <!-- Right logo (Instagram logo) -->
+      <img src="InstagramLogo.png" alt="Instagram Logo" class="logo-right">
+    </div>
   </header>
 
   <section class="beats">
