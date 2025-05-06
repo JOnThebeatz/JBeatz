@@ -12,8 +12,9 @@
       color: black;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start; /* Align everything to the left */
       min-height: 100vh;
+      padding: 20px;
     }
 
     header {
@@ -55,16 +56,14 @@
       font-size: 17px;
     }
 
-    /* Beat section aligned to the left */
+    /* Beat section now aligned to the left */
     .beats {
       display: flex;
       flex-direction: column;
-      align-items: flex-start; /* Align everything to the left */
+      align-items: flex-start; /* Ensure beats are aligned to the left */
       gap: 1.5rem;
       width: 100%;
       max-width: 500px;
-      padding: 1rem;
-      margin-left: 20px; /* Add left margin to give it some spacing from the edge */
     }
 
     .beat {
