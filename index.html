@@ -17,12 +17,18 @@
     }
     header {
       width: 100%;
-      text-align: center;
-      padding: 1rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
       background: #1f1f1f;
     }
-    header img.logo {
+    header img.logo-left {
       max-width: 200px;
+      height: auto;
+    }
+    header img.logo-right {
+      max-width: 100px; /* Adjust size for the right logo */
       height: auto;
     }
     .beats {
@@ -87,8 +93,10 @@
 </head>
 <body>
   <header>
-    <!-- New logo file -->
-    <img src="JBeatsLogo.png" alt="JBeats Logo" class="logo">
+    <!-- Left logo -->
+    <img src="JBeatsLogo.png" alt="JBeats Logo" class="logo-left">
+    <!-- Right logo (Instagram logo) -->
+    <img src="InstagramLogo.png" alt="Instagram Logo" class="logo-right">
   </header>
 
   <section class="beats">
