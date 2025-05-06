@@ -30,8 +30,8 @@
       grid-template-columns: 1fr;
       gap: 2rem;
       width: 100%;
-      max-width: 800px;
-      padding: 2rem 1rem;
+      max-width: 600px; /* Make the overall beat block smaller */
+      padding: 1rem;
     }
     .beat {
       background: #333; /* Dark grey background for the beat block */
@@ -40,18 +40,15 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 100%;
     }
     .beat h2 {
       margin: 0.5rem 0;
       color: #a78bfd; /* Lighter purple color */
     }
     .beat .info-box {
-      background: #444; /* Dark grey background for the info box */
-      color: red; /* Red text inside the info box */
-      padding: 1rem;
-      border-radius: 8px;
-      width: 100%;
-      margin-top: 0.5rem;
+      margin-top: 1rem;
+      color: red; /* Red text for info */
     }
     .beat audio {
       width: 100%;
@@ -84,9 +81,7 @@
     <!-- Beat 1 -->
     <div class="beat">
       <h2>Old School Trap SC</h2>
-      <div class="info-box">
-        <p>This is just a showcase of what you are buying. You will not get all those producer tags in the beat, and the beat is clipped so you can hear a little bit of it before you buy.</p>
-      </div>
+      <p class="info-box">This is just a showcase of what you are buying. You will not get all those producer tags in the beat, and the beat is clipped so you can hear a little bit of it before you buy.</p>
       <audio controls>
         <source src="beats/oldschooltrapSC.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
