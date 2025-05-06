@@ -12,9 +12,10 @@
       color: black;
       display: flex;
       flex-direction: column;
-      align-items: flex-start; /* Align everything to the left */
+      align-items: flex-start;
       min-height: 100vh;
       padding: 20px;
+      position: relative; /* Ensure the line can be positioned relative to the page */
     }
 
     header {
@@ -56,11 +57,11 @@
       font-size: 17px;
     }
 
-    /* Beat section now aligned to the left */
+    /* Beat section */
     .beats {
       display: flex;
       flex-direction: column;
-      align-items: flex-start; /* Ensure beats are aligned to the left */
+      align-items: flex-start;
       gap: 1.5rem;
       width: 100%;
       max-width: 500px;
@@ -125,6 +126,16 @@
       color: #888;
       text-align: center;
     }
+
+    /* Vertical Line */
+    .vertical-line {
+      position: absolute;
+      top: 0;
+      right: 10%; /* Position the line closer to the right, adjust this percentage to your needs */
+      width: 2px;
+      height: 100%;
+      background-color: white;
+    }
   </style>
 </head>
 <body>
@@ -142,6 +153,9 @@
 
     <div style="width: 120px;"></div>
   </header>
+
+  <!-- Vertical Line -->
+  <div class="vertical-line"></div>
 
   <!-- Beat Section -->
   <section class="beats">
