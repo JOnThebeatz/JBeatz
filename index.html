@@ -49,15 +49,16 @@
     }
     .beat .info-box {
       margin-top: 1rem;
-      color: red; /* Red text for info */
+      color: white; /* White text for info */
       font-size: 0.9rem; /* Reduced font size */
+      text-align: left; /* Left align the info */
+      width: 100%; /* Full width for info */
     }
     .beat audio {
       width: 100%;
-      margin: 0.75rem 0; /* Reduced margin */
-      border: 2px solid white; /* Added white border instead of a box */
+      margin: 1rem 0; /* Reduced margin */
+      background: #e63946; /* Red color for the audio player */
       border-radius: 4px;
-      background: #333; /* Keep the background of the audio area matching the page */
     }
     .button {
       display: inline-block;
@@ -79,15 +80,17 @@
 </head>
 <body>
   <header>
-    <!-- Your logo file -->
-    <img src="6dff4263dea3087e81d17b4aff115add.png" alt="JOnThebeatz Logo" class="logo">
+    <!-- New logo file -->
+    <img src="JBeatsLogo.png" alt="JBeats Logo" class="logo">
   </header>
 
   <section class="beats">
     <!-- Beat 1 -->
     <div class="beat">
       <h2>Old School Trap SC</h2>
-      <p class="info-box">This is just a showcase of what you are buying. You will not get all those producer tags in the beat, and the beat is clipped so you can hear a little bit of it before you buy.</p>
+      <div class="info-box">
+        <p>This is just a showcase of what you are buying. You will not get all those producer tags in the beat, and the beat is clipped so you can hear a little bit of it before you buy.</p>
+      </div>
       <audio controls>
         <source src="beats/oldschooltrapSC.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
