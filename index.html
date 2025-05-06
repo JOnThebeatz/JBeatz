@@ -28,7 +28,7 @@
     }
 
     .logo-left {
-      max-width: 200px;
+      max-width: 240px; /* Bigger main logo */
       height: auto;
     }
 
@@ -44,36 +44,139 @@
     }
 
     .logo-right {
-      max-width: 28px; /* Increased from 20px */
+      max-width: 28px;
       height: auto;
       margin-right: 8px;
     }
 
     .insta-handle {
       color: white;
-      font-weight: 600; /* Thicker font */
-      font-size: 16px;   /* Slightly bigger text */
+      font-weight: 600;
+      font-size: 16px;
     }
-    /* The rest of your styles remain unchanged... */
+
+    .beats {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 500px;
+      padding: 1rem;
+    }
+
+    .beat {
+      background: #333;
+      padding: 0.75rem;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .beat h2 {
+      margin: 0.5rem 0;
+      color: #a78bfd;
+      font-size: 1.2rem;
+    }
+
+    .beat audio {
+      width: 100%;
+      margin: 1rem 0;
+      background: none;
+      border: none;
+      outline: none;
+    }
+
+    .info-box {
+      margin-bottom: 0.3rem;
+      color: white;
+      font-size: 0.9rem;
+      text-align: left;
+      width: 100%;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 0.3rem;
+      background: #28a745;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .line {
+      width: 100%;
+      height: 2px;
+      background: white;
+      margin-top: 1rem;
+    }
+
+    footer {
+      margin: auto 0 1rem;
+      font-size: 0.9rem;
+      color: #888;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-    <!-- Instagram on the left -->
+    <!-- Instagram on left -->
     <div class="insta-box">
       <img src="InstagramLogo.png" alt="Instagram Logo" class="logo-right">
       <span class="insta-handle">@JBeatzShop</span>
     </div>
 
-    <!-- Main logo centered -->
+    <!-- Center logo -->
     <div class="logo-center">
       <img src="JBeatsLogo.png" alt="JBeats Logo" class="logo-left">
     </div>
 
-    <!-- Spacer to balance layout -->
-    <div style="width: 100px;"></div>
+    <!-- Spacer for balance -->
+    <div style="width: 120px;"></div>
   </header>
 
-  <!-- Rest of your content goes here... -->
+  <!-- Beat Section -->
+  <section class="beats">
+    <!-- Beat 1 -->
+    <div class="beat">
+      <h2>Old School Trap SC</h2>
+      <audio controls>
+        <source src="beats/oldschooltrapSC.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="info-box">
+        <p>This is just a showcase of what you are buying. You will not get all those producer tags in the beat, and the beat is clipped so you can hear a little bit of it before you buy.</p>
+      </div>
+      <a class="button" href="https://payhip.com/b/PIeqf" target="_blank">Buy - $5</a>
+      <div class="line"></div>
+    </div>
+
+    <!-- Beat 2 -->
+    <div class="beat">
+      <h2>Crazy One Trap SC</h2>
+      <audio controls>
+        <source src="beats/CrazyOneTrapSC.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="info-box">
+        <p>This is just a showcase of what you are buying. You will not get all those producer tags in the beat, and the beat is clipped so you can hear a little bit of it before you buy.</p>
+      </div>
+      <a class="button" href="https://payhip.com/b/Mk2jR" target="_blank">Buy - $5</a>
+      <div class="line"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 JOnThebeatz
+  </footer>
+
 </body>
 </html>
