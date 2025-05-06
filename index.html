@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #808080; /* Normal grey background */
+      background: #333; /* Set background color same as the music box color */
       color: black; /* Default text color is black */
       display: flex;
       flex-direction: column;
@@ -55,6 +55,9 @@
     .beat audio {
       width: 100%;
       margin: 0.75rem 0; /* Reduced margin */
+      border: 2px solid white; /* Added white border instead of a box */
+      border-radius: 4px;
+      background: #333; /* Keep the background of the audio area matching the page */
     }
     .button {
       display: inline-block;
