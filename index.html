@@ -80,11 +80,11 @@
       font-size: 1.2rem;
     }
 
-    /* Custom SoundCloud-like audio player */
+    /* Custom red audio player */
     .audio-player {
       width: 100%;
       position: relative;
-      background-color: #1db954; /* SoundCloud's primary color */
+      background-color: #e12d39; /* Red color */
       height: 40px;
       border-radius: 4px;
       overflow: hidden;
@@ -201,7 +201,7 @@
         </div>
       </div>
       <audio id="audio1" preload="auto" src="beats/oldschooltrapSC.mp3" type="audio/mpeg"></audio>
-      
+
       <div class="info-box">
         <p>This is just a showcase of what you are buying. You will not get all those producer tags in the beat, and the beat is clipped so you can hear a little bit of it before you buy.</p>
       </div>
@@ -255,5 +255,17 @@
     &copy; 2025 JOnThebeatz
   </footer>
 
-</body>
-</html>
+  <script>
+    // Update range sliders based on audio current time
+    function updateRange(audioId, rangeId) {
+      const audio = document.getElementById(audioId);
+      const range = document.getElementById(rangeId);
+      const totalDuration = audio.duration;
+
+      setInterval(function () {
+        range.value = (audio.currentTime / totalDuration) * 100;
+      }, 1000);
+    }
+
+    document.getElementById('audio1').addEventListener('play', function () {
+      updateRange('audio1', 'audio1');
