@@ -44,6 +44,14 @@
     .beat h2 {
       margin: 0.5rem 0;
     }
+    .beat .info-box {
+      background: #333;
+      color: #ccc;
+      padding: 1rem;
+      border-radius: 8px;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
     .beat audio {
       width: 100%;
       margin: 1rem 0;
@@ -51,7 +59,7 @@
     .button {
       display: inline-block;
       margin-top: 1rem;
-      background: #e63946;
+      background: #2a9d8f; /* Green color */
       color: white;
       padding: 0.75rem 1.5rem;
       text-decoration: none;
@@ -72,9 +80,12 @@
   </header>
 
   <section class="beats">
-    <!-- OLDTrappy -->
+    <!-- Beat 1 -->
     <div class="beat">
       <h2>Old School Trap SC</h2>
+      <div class="info-box">
+        <p>This is a high-energy trap beat with an old-school vibe, perfect for your next track!</p>
+      </div>
       <audio controls>
         <source src="beats/oldschooltrapSC.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
@@ -85,6 +96,9 @@
     <!-- Beat 2: duplicate and update for more beats -->
     <div class="beat">
       <h2>Beat #2</h2>
+      <div class="info-box">
+        <p>This beat is great for modern rap, combining hard drums with smooth melodies!</p>
+      </div>
       <audio controls>
         <source src="beats/beat2.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
