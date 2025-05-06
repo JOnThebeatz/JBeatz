@@ -7,15 +7,13 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #333;
-      color: black;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #1e1e1e;
+      color: #f0f0f0;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       min-height: 100vh;
-      padding: 20px;
-      position: relative;
     }
 
     header {
@@ -23,14 +21,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 2.5rem 2rem;
-      background: #1f1f1f;
-      box-sizing: border-box;
+      padding: 1.5rem 2rem;
+      background: #111;
       position: relative;
     }
 
     .logo-left {
-      max-width: 260px;
+      max-width: 280px;
       height: auto;
     }
 
@@ -46,92 +43,78 @@
     }
 
     .logo-right {
-      max-width: 30px;
-      height: auto;
+      max-width: 28px;
       margin-right: 10px;
     }
 
     .insta-handle {
       color: white;
-      font-weight: 600;
-      font-size: 17px;
+      font-weight: 700;
+      font-size: 1rem;
     }
 
-    /* Beat section */
     .beats {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      gap: 1.5rem;
-      width: 100%;
-      max-width: 500px;
+      gap: 2rem;
+      width: 90%;
+      max-width: 600px;
+      margin-top: 2rem;
     }
 
     .beat {
-      background: #333;
-      padding: 0.75rem;
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      width: 100%;
+      background: #2a2a2a;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     }
 
     .beat h2 {
-      margin: 0.5rem 0;
+      margin: 0 0 0.5rem 0;
       color: #a78bfd;
-      font-size: 1.2rem;
-    }
-
-    .audio-player {
-      width: 100%;
-      height: 40px;
-      background-color: #444;
-      border-radius: 8px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      margin: 10px 0;
+      font-size: 1.3rem;
     }
 
     .audio-player audio {
       width: 100%;
-      background: none;
-      border-radius: 8px;
-      border: none;
+      outline: none;
     }
 
     .button {
       display: inline-block;
-      margin-top: 0.3rem;
+      margin-top: 0.7rem;
       background: #28a745;
       color: white;
-      padding: 0.6rem 1.2rem;
+      padding: 0.5rem 1rem;
       text-decoration: none;
-      border-radius: 4px;
+      border-radius: 6px;
       font-weight: bold;
-      font-size: 0.9rem;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background: #218838;
     }
 
     .line {
       width: 100%;
-      height: 2px;
-      background: white;
+      height: 1px;
+      background: #444;
       margin-top: 1rem;
     }
 
     footer {
-      margin: auto 0 1rem;
+      margin-top: auto;
+      padding: 1rem 0;
       font-size: 0.9rem;
       color: #888;
       text-align: center;
+      width: 100%;
     }
-
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <div class="insta-box">
       <img src="InstagramLogo.png" alt="Instagram Logo" class="logo-right">
@@ -145,75 +128,56 @@
     <div style="width: 120px;"></div>
   </header>
 
-  <!-- Beat Section -->
   <section class="beats">
-    <!-- Beat 1 -->
     <div class="beat">
       <h2>Old School Trap SC</h2>
-
-      <!-- Custom Audio Player -->
       <div class="audio-player">
-        <audio id="audio1" controls>
+        <audio controls>
           <source src="beats/oldschooltrapSC.mp3" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
       </div>
-
       <a class="button" href="https://payhip.com/b/PIeqf" target="_blank">Buy - $5</a>
       <div class="line"></div>
     </div>
 
-    <!-- Beat 2 -->
     <div class="beat">
       <h2>Crazy One Trap SC</h2>
-
-      <!-- Custom Audio Player -->
       <div class="audio-player">
-        <audio id="audio2" controls>
+        <audio controls>
           <source src="beats/CrazyOneTrapSC.mp3" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
       </div>
-
       <a class="button" href="https://payhip.com/b/Mk2jR" target="_blank">Buy - $5</a>
       <div class="line"></div>
     </div>
 
-    <!-- Beat 3 -->
     <div class="beat">
       <h2>Party Trap SC</h2>
-
-      <!-- Custom Audio Player -->
       <div class="audio-player">
-        <audio id="audio3" controls>
+        <audio controls>
           <source src="beats/PartyTrapSC.mp3" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
       </div>
-
       <a class="button" href="https://payhip.com/b/y8aRv" target="_blank">Buy - $7</a>
       <div class="line"></div>
     </div>
 
-    <!-- Beat 4 -->
     <div class="beat">
       <h2>Big Trapz SC</h2>
-
-      <!-- Custom Audio Player -->
       <div class="audio-player">
-        <audio id="audio4" controls>
+        <audio controls>
           <source src="beats/BigTrapzSC.mp3" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
       </div>
-
       <a class="button" href="https://payhip.com/b/lmLbr" target="_blank">Buy - $15</a>
       <div class="line"></div>
     </div>
-
   </section>
 
-  <!-- Footer -->
   <footer>
     &copy; 2025 JOnThebeatz
   </footer>
