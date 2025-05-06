@@ -80,12 +80,60 @@
       font-size: 1.2rem;
     }
 
-    .beat audio {
+    /* Custom SoundCloud-like audio player */
+    .audio-player {
       width: 100%;
-      margin: 1rem 0;
-      background: none;
+      position: relative;
+      background-color: #1db954; /* SoundCloud's primary color */
+      height: 40px;
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .audio-player input[type="range"] {
+      width: 100%;
+      height: 8px;
+      background: #ddd;
       border: none;
       outline: none;
+      cursor: pointer;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .audio-player input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .audio-player input[type="range"]:focus {
+      outline: none;
+    }
+
+    .audio-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      transform: translateY(-50%);
+      padding: 0 10px;
+    }
+
+    .audio-controls button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
     }
 
     .info-box {
@@ -144,10 +192,16 @@
     <!-- Beat 1 -->
     <div class="beat">
       <h2>Old School Trap SC</h2>
-      <audio controls>
-        <source src="beats/oldschooltrapSC.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
+
+      <!-- Custom Audio Player -->
+      <div class="audio-player">
+        <div class="audio-controls">
+          <button onclick="document.getElementById('audio1').play()">&#9654;</button> <!-- Play button -->
+          <input type="range" id="audio1" value="0" min="0" max="100" step="1" />
+        </div>
+      </div>
+      <audio id="audio1" preload="auto" src="beats/oldschooltrapSC.mp3" type="audio/mpeg"></audio>
+      
       <div class="info-box">
         <p>This is just a showcase of what you are buying. You will not get all those producer tags in the beat, and the beat is clipped so you can hear a little bit of it before you buy.</p>
       </div>
@@ -158,10 +212,16 @@
     <!-- Beat 2 -->
     <div class="beat">
       <h2>Crazy One Trap SC</h2>
-      <audio controls>
-        <source src="beats/CrazyOneTrapSC.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
+
+      <!-- Custom Audio Player -->
+      <div class="audio-player">
+        <div class="audio-controls">
+          <button onclick="document.getElementById('audio2').play()">&#9654;</button> <!-- Play button -->
+          <input type="range" id="audio2" value="0" min="0" max="100" step="1" />
+        </div>
+      </div>
+      <audio id="audio2" preload="auto" src="beats/CrazyOneTrapSC.mp3" type="audio/mpeg"></audio>
+
       <div class="info-box">
         <p>This is just a showcase of what you are buying. You will not get all those producer tags in the beat, and the beat is clipped so you can hear a little bit of it before you buy.</p>
       </div>
@@ -169,13 +229,19 @@
       <div class="line"></div>
     </div>
 
-    <!-- Beat 3 (Updated Price) -->
+    <!-- Beat 3 -->
     <div class="beat">
       <h2>Party Trap SC</h2>
-      <audio controls>
-        <source src="beats/PartyTrapSC.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
+
+      <!-- Custom Audio Player -->
+      <div class="audio-player">
+        <div class="audio-controls">
+          <button onclick="document.getElementById('audio3').play()">&#9654;</button> <!-- Play button -->
+          <input type="range" id="audio3" value="0" min="0" max="100" step="1" />
+        </div>
+      </div>
+      <audio id="audio3" preload="auto" src="beats/PartyTrapSC.mp3" type="audio/mpeg"></audio>
+
       <div class="info-box">
         <p>This is just a showcase of what you are buying. You will not get all those producer tags in the beat, and the beat is clipped so you can hear a little bit of it before you buy.</p>
       </div>
