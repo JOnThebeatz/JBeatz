@@ -19,26 +19,28 @@
     header {
       width: 100%;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
       background: #1f1f1f;
-    }
-
-    .logo-container {
-      display: flex;
-      align-items: center;
+      box-sizing: border-box;
     }
 
     .logo-left {
       max-width: 200px;
       height: auto;
+      margin: 0 auto;
+    }
+
+    .logo-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .insta-box {
       display: flex;
       align-items: center;
-      margin-left: 15px;
     }
 
     .logo-right {
@@ -51,7 +53,6 @@
       color: white;
       font-weight: 300;
       font-size: 14px;
-      font-family: Arial, sans-serif;
     }
 
     .beats {
@@ -124,12 +125,15 @@
 </head>
 <body>
   <header>
-    <div class="logo-container">
+    <div style="width: 20px;"></div> <!-- Spacer to keep layout symmetrical -->
+
+    <div class="logo-center">
       <img src="JBeatsLogo.png" alt="JBeats Logo" class="logo-left">
-      <div class="insta-box">
-        <img src="InstagramLogo.png" alt="Instagram Logo" class="logo-right">
-        <span class="insta-handle">@JBeatzShop</span>
-      </div>
+    </div>
+
+    <div class="insta-box">
+      <img src="InstagramLogo.png" alt="Instagram Logo" class="logo-right">
+      <span class="insta-handle">@JBeatzShop</span>
     </div>
   </header>
 
