@@ -47,18 +47,18 @@
       color: #a78bfd; /* Lighter purple color */
       font-size: 1.2rem; /* Reduced font size */
     }
-    .beat .info-box {
-      margin-bottom: 1rem; /* Margin to separate it from the buy button */
-      color: white; /* White text for info */
-      font-size: 0.9rem; /* Reduced font size */
-      text-align: left; /* Left align the info */
-      width: 100%; /* Full width for info */
-    }
     .beat audio {
       width: 100%;
       margin: 1rem 0; /* Reduced margin */
       background: none; /* Removed background from the music player */
       border-radius: 4px;
+    }
+    .info-box {
+      margin-bottom: 1rem; /* Margin to separate it from the buy button */
+      color: white; /* White text for info */
+      font-size: 0.9rem; /* Reduced font size */
+      text-align: left; /* Left align the info */
+      width: 100%; /* Full width for info */
     }
     .button {
       display: inline-block;
@@ -88,13 +88,17 @@
     <!-- Beat 1 -->
     <div class="beat">
       <h2>Old School Trap SC</h2>
-      <div class="info-box">
-        <p>This is just a showcase of what you are buying. You will not get all those producer tags in the beat, and the beat is clipped so you can hear a little bit of it before you buy.</p>
-      </div>
       <audio controls>
         <source src="beats/oldschooltrapSC.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
+      
+      <!-- Info Box (placed below the music player) -->
+      <div class="info-box">
+        <p>This is just a showcase of what you are buying. You will not get all those producer tags in the beat, and the beat is clipped so you can hear a little bit of it before you buy.</p>
+      </div>
+
+      <!-- Buy Button -->
       <a class="button" href="https://payhip.com/b/PIeqf" target="_blank">Buy this beat</a>
     </div>
 
