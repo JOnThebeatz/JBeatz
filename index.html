@@ -301,4 +301,42 @@
     function shakeLogoOnBeat(audio) {
       let audioContext = new (window.AudioContext || window.webkitAudioContext)();
       let analyser = audioContext.createAnalyser();
-      analyser.fftSize = 256; // Size of frequency
+      analyser.fftSize = 256; // Size of frequency data
+      let bufferLength = analyser.frequencyBinCount;
+      let dataArray = new Uint8Array(bufferLength);
+
+      let source = audioContext.createMediaElementSource(audio);
+      source.connect(analyser);
+      analyser.connect(audioContext.destination);
+
+      // Detect beat every frame and shake logo if bass frequencies are high
+      function detectBeat() {
+        analyser.getByteFrequencyData(dataArray);
+        const bass = dataArray.slice(0, 10); // Lower frequencies (bass)
+        const averageBass = bass.reduce((sum, value) => sum + value, 0) / bass.length;
+
+        if (averageBass > 150) { // Adjust threshold for bass detection
+          logo.classList.add('shake');
+        } else {
+          logo.classList.remove('shake');
+        }
+
+        // Keep checking for the beat in real time
+        requestAnimationFrame(detectBeat);
+      }
+
+      audio.play();
+      audioContext.resume().then(() => {
+        detectBeat();
+      });
+    }
+
+    // Apply beat detection for each audio element
+    audioElements.forEach(audio => {
+      audio.addEventListener('play', () => {
+        shakeLogoOnBeat(audio);
+      });
+    });
+  </script>
+</body>
+</html>
