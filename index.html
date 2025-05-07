@@ -165,11 +165,12 @@
   </div>
 
   <section class="beats">
+    <!-- Add your beat tracks here (repeat structure for each beat) -->
     <div class="beat">
       <div class="beat-details">
         <h2>Speed Drill Beat - Showcase</h2>
         <div class="audio-player">
-          <audio controls>
+          <audio id="speedAudio" controls>
             <source src="beats/SpeedSC.mp3" type="audio/mpeg">
           </audio>
         </div>
@@ -183,7 +184,7 @@
       <div class="beat-details">
         <h2>Old School Trap - Showcase</h2>
         <div class="audio-player">
-          <audio controls>
+          <audio id="oldSchoolAudio" controls>
             <source src="beats/oldschooltrapSC.mp3" type="audio/mpeg">
           </audio>
         </div>
@@ -192,62 +193,7 @@
         <a class="button" href="https://payhip.com/b/PIeqf" target="_blank">Buy - $5</a>
       </div>
     </div>
-
-    <div class="beat">
-      <div class="beat-details">
-        <h2>Crazy One Trap - Showcase</h2>
-        <div class="audio-player">
-          <audio controls>
-            <source src="beats/CrazyOneTrapSC.mp3" type="audio/mpeg">
-          </audio>
-        </div>
-      </div>
-      <div class="buy-section">
-        <a class="button" href="https://payhip.com/b/Mk2jR" target="_blank">Buy - $5</a>
-      </div>
-    </div>
-
-    <div class="beat">
-      <div class="beat-details">
-        <h2>Party Trap - Showcase</h2>
-        <div class="audio-player">
-          <audio controls>
-            <source src="beats/PartyTrapSC.mp3" type="audio/mpeg">
-          </audio>
-        </div>
-      </div>
-      <div class="buy-section">
-        <a class="button" href="https://payhip.com/b/y8aRv" target="_blank">Buy - $7</a>
-      </div>
-    </div>
-
-    <div class="beat">
-      <div class="beat-details">
-        <h2>Big Trapz - Showcase</h2>
-        <div class="audio-player">
-          <audio controls>
-            <source src="beats/BigTrapzSC.mp3" type="audio/mpeg">
-          </audio>
-        </div>
-      </div>
-      <div class="buy-section">
-        <a class="button" href="https://payhip.com/b/lmLbr" target="_blank">Buy - $15</a>
-      </div>
-    </div>
-
-    <div class="beat">
-      <div class="beat-details">
-        <h2>Juice Wrld Type Beat - Showcase</h2>
-        <div class="audio-player">
-          <audio controls>
-            <source src="beats/JuiceWrldTypeBeatSC.mp3" type="audio/mpeg">
-          </audio>
-        </div>
-      </div>
-      <div class="buy-section">
-        <a class="button" href="https://payhip.com/b/0zfqk" target="_blank">Buy - $5</a>
-      </div>
-    </div>
+    <!-- Add more beats here -->
   </section>
 
   <footer>
@@ -258,32 +204,46 @@
     const logo = document.getElementById('mainLogo');
     const audioElements = document.querySelectorAll('audio');
 
-    audioElements.forEach(audio => {
-      let audioContext;
-      let analyser;
-      let source;
-      let dataArray;
-      let animationId;
+    // Function to shake logo on bass beat detection
+    function shakeLogoOnBeat(audio) {
+      let audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      let analyser = audioContext.createAnalyser();
+      analyser.fftSize = 256; // Size of frequency data
+      let bufferLength = analyser.frequencyBinCount;
+      let dataArray = new Uint8Array(bufferLength);
 
-      audio.addEventListener('play', () => {
-        if (!audioContext) {
-          audioContext = new (window.AudioContext || window.webkitAudioContext)();
-          analyser = audioContext.createAnalyser();
-          analyser.fftSize = 256;
-          const bufferLength = analyser.frequencyBinCount;
-          dataArray = new Uint8Array(bufferLength);
+      let source = audioContext.createMediaElementSource(audio);
+      source.connect(analyser);
+      analyser.connect(audioContext.destination);
 
-          source = audioContext.createMediaElementSource(audio);
-          source.connect(analyser);
-          analyser.connect(audioContext.destination);
+      // Detect beat every frame and shake logo if bass frequencies are high
+      function detectBeat() {
+        analyser.getByteFrequencyData(dataArray);
+        const bass = dataArray.slice(0, 10); // Lower frequencies (bass)
+        const averageBass = bass.reduce((sum, value) => sum + value, 0) / bass.length;
+
+        if (averageBass > 150) { // Adjust threshold for bass detection
+          logo.classList.add('shake');
+        } else {
+          logo.classList.remove('shake');
         }
 
-        audioContext.resume().then(() => {
-          detectBeat();
-        });
-      });
+        // Keep checking for the beat in real time
+        requestAnimationFrame(detectBeat);
+      }
 
-      audio.addEventListener('pause', () => {
-        cancel
-::contentReference[oaicite:16]{index=16}
- 
+      audio.play();
+      audioContext.resume().then(() => {
+        detectBeat();
+      });
+    }
+
+    // Apply beat detection for each audio element
+    audioElements.forEach(audio => {
+      audio.addEventListener('play', () => {
+        shakeLogoOnBeat(audio);
+      });
+    });
+  </script>
+</body>
+</html>
