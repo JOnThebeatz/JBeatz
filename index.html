@@ -19,7 +19,7 @@
     header {
       width: 100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       padding: 1.5rem 2rem;
       background: #111;
@@ -36,32 +36,6 @@
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-    }
-
-    .insta-box {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo-right {
-      max-width: 28px;
-      margin-right: 10px;
-    }
-
-    .insta-handle {
-      color: white;
-      font-weight: 700;
-      font-size: 1rem;
-    }
-
-    .info-box {
-      background: rgba(42, 42, 42, 0.7);
-      padding: 1rem;
-      margin: 1rem 2rem 0 2rem;
-      border-radius: 8px;
-      max-width: 600px;
-      align-self: flex-start;
-      font-size: 0.9rem;
     }
 
     .beats {
@@ -121,8 +95,43 @@
       background: #8b5cf6;
     }
 
+    .bottom-section {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+
+    .insta-box {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .logo-right {
+      max-width: 28px;
+      margin-right: 10px;
+    }
+
+    .insta-handle {
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .info-box {
+      background: rgba(42, 42, 42, 0.7);
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 8px;
+      max-width: 600px;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+
     footer {
-      margin-top: auto;
+      margin-top: 2rem;
       padding: 1rem 0;
       font-size: 0.9rem;
       color: #888;
@@ -146,26 +155,12 @@
 <body>
 
   <header>
-    <div class="insta-box">
-      <img src="InstagramLogo.png" alt="Instagram Logo" class="logo-right">
-      <span class="insta-handle">@JBeatzShop</span>
-    </div>
-
     <div class="logo-center">
       <img id="mainLogo" src="JBeatsLogo.png" alt="JBeats Logo" class="logo-left">
     </div>
-
-    <div style="width: 120px;"></div>
   </header>
 
-  <div class="info-box">
-    Hello I'm a new music producer and I just made this website for other new music producers.  
-    I’ve seen how expensive beats are nowadays, but here the price will never go over $20.  
-    No ads, just click and buy. DM me if you want a custom beat! :)
-  </div>
-
   <section class="beats">
-    <!-- Speed Drill Beat -->
     <div class="beat">
       <div class="beat-details">
         <h2>Speed Drill Beat - Showcase</h2>
@@ -180,12 +175,11 @@
       </div>
     </div>
 
-    <!-- Old School Trap Beat -->
     <div class="beat">
       <div class="beat-details">
         <h2>Old School Trap - Showcase</h2>
         <div class="audio-player">
-          <audio id="oldSchoolAudio" controls>
+          <audio controls>
             <source src="beats/oldschooltrapSC.mp3" type="audio/mpeg">
           </audio>
         </div>
@@ -195,12 +189,11 @@
       </div>
     </div>
 
-    <!-- Crazy One Trap Beat -->
     <div class="beat">
       <div class="beat-details">
         <h2>Crazy One Trap - Showcase</h2>
         <div class="audio-player">
-          <audio id="crazyOneAudio" controls>
+          <audio controls>
             <source src="beats/CrazyOneTrapSC.mp3" type="audio/mpeg">
           </audio>
         </div>
@@ -210,12 +203,11 @@
       </div>
     </div>
 
-    <!-- Party Trap Beat -->
     <div class="beat">
       <div class="beat-details">
         <h2>Party Trap - Showcase</h2>
         <div class="audio-player">
-          <audio id="partyTrapAudio" controls>
+          <audio controls>
             <source src="beats/PartyTrapSC.mp3" type="audio/mpeg">
           </audio>
         </div>
@@ -225,12 +217,11 @@
       </div>
     </div>
 
-    <!-- Big Trapz Beat -->
     <div class="beat">
       <div class="beat-details">
         <h2>Big Trapz - Showcase</h2>
         <div class="audio-player">
-          <audio id="bigTrapzAudio" controls>
+          <audio controls>
             <source src="beats/BigTrapzSC.mp3" type="audio/mpeg">
           </audio>
         </div>
@@ -240,12 +231,11 @@
       </div>
     </div>
 
-    <!-- Juice Wrld Type Beat -->
     <div class="beat">
       <div class="beat-details">
         <h2>JuiceWrld Type Beat - Showcase</h2>
         <div class="audio-player">
-          <audio id="juiceWrldAudio" controls>
+          <audio controls>
             <source src="beats/JuiceWrldTypeBeatSC.mp3" type="audio/mpeg">
           </audio>
         </div>
@@ -254,8 +244,20 @@
         <a class="button" href="https://payhip.com/b/0zfqk" target="_blank">Buy - $5</a>
       </div>
     </div>
-
   </section>
+
+  <div class="bottom-section">
+    <div class="insta-box">
+      <img src="InstagramLogo.png" alt="Instagram Logo" class="logo-right">
+      <span class="insta-handle">@JBeatzShop</span>
+    </div>
+
+    <div class="info-box">
+      Hello I'm a new music producer and I just made this website for other new music producers.  
+      I’ve seen how expensive beats are nowadays, but here the price will never go over $20.  
+      No ads, just click and buy. DM me if you want a custom beat! :)
+    </div>
+  </div>
 
   <footer>
     &copy; 2025 JOnThebeatz
@@ -265,11 +267,10 @@
     const logo = document.getElementById('mainLogo');
     const audioElements = document.querySelectorAll('audio');
 
-    // Function to shake logo on bass beat detection
     function shakeLogoOnBeat(audio) {
       let audioContext = new (window.AudioContext || window.webkitAudioContext)();
       let analyser = audioContext.createAnalyser();
-      analyser.fftSize = 256; // Size of frequency data
+      analyser.fftSize = 256;
       let bufferLength = analyser.frequencyBinCount;
       let dataArray = new Uint8Array(bufferLength);
 
@@ -277,19 +278,17 @@
       source.connect(analyser);
       analyser.connect(audioContext.destination);
 
-      // Detect beat every frame and shake logo if bass frequencies are high
       function detectBeat() {
         analyser.getByteFrequencyData(dataArray);
-        const bass = dataArray.slice(0, 10); // Lower frequencies (bass)
+        const bass = dataArray.slice(0, 10);
         const averageBass = bass.reduce((sum, value) => sum + value, 0) / bass.length;
 
-        if (averageBass > 150) { // Adjust threshold for bass detection
+        if (averageBass > 150) {
           logo.classList.add('shake');
         } else {
           logo.classList.remove('shake');
         }
 
-        // Keep checking for the beat in real time
         requestAnimationFrame(detectBeat);
       }
 
@@ -299,12 +298,12 @@
       });
     }
 
-    // Apply beat detection for each audio element
     audioElements.forEach(audio => {
       audio.addEventListener('play', () => {
         shakeLogoOnBeat(audio);
       });
     });
   </script>
+
 </body>
 </html>
