@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom, black, #6a0dad 50%, #6a0dad);
+      background: linear-gradient(to bottom, #000000, #4b0082);
       color: #f0f0f0;
       display: flex;
       flex-direction: column;
@@ -20,7 +20,7 @@
       width: 100%;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       padding: 1.5rem 2rem;
       background: #111;
       position: relative;
@@ -35,11 +35,13 @@
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
+      top: 1.5rem;
     }
 
     .insta-box {
       display: flex;
       align-items: center;
+      margin-bottom: 0.5rem;
     }
 
     .logo-right {
@@ -57,16 +59,20 @@
       background: rgba(42, 42, 42, 0.8);
       padding: 1rem;
       border-radius: 10px;
-      margin: 1.5rem;
-      max-width: 600px;
-      align-self: flex-start;
-      margin-left: 2rem;
+      margin-top: 1rem;
+      width: 280px;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
 
     .info-box p {
       margin: 0;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       color: white;
+      line-height: 1.4;
     }
 
     .beats {
@@ -75,29 +81,22 @@
       gap: 1.5rem;
       width: 90%;
       max-width: 700px;
-      margin-top: 1rem;
+      margin-top: 2rem;
     }
 
     .beat {
-      background: rgba(42, 42, 42, 0.7);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background: rgba(42, 42, 42, 0.75);
       padding: 1rem;
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-      flex-wrap: wrap;
-    }
-
-    .beat-info {
-      flex: 1;
-      min-width: 250px;
+      display: flex;
+      flex-direction: column;
     }
 
     .beat h2 {
       margin: 0 0 0.5rem 0;
       color: #a78bfd;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
 
     .audio-player audio {
@@ -105,15 +104,16 @@
       outline: none;
     }
 
-    .button-container {
-      margin-left: 1.5rem;
-      margin-top: 1.5rem;
+    .buy-section {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 1rem;
     }
 
     .button {
       background: #a78bfd;
       color: white;
-      padding: 0.5rem 1.2rem;
+      padding: 0.5rem 1rem;
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
@@ -121,7 +121,7 @@
     }
 
     .button:hover {
-      background: #925bfd;
+      background: #8a6ddf;
     }
 
     footer {
@@ -137,9 +137,18 @@
 <body>
 
   <header>
-    <div class="insta-box">
-      <img src="InstagramLogo.png" alt="Instagram Logo" class="logo-right">
-      <span class="insta-handle">@JBeatzShop</span>
+    <div>
+      <div class="insta-box">
+        <img src="InstagramLogo.png" alt="Instagram Logo" class="logo-right">
+        <span class="insta-handle">@JBeatzShop</span>
+      </div>
+      <div class="info-box">
+        <p>
+          Hello, I'm a new music producer and I just made this website for other new artists. 
+          Beats are expensive these days, but here they’ll never cost over $20. 
+          No ads – just click and buy. DM me for custom beats! :)
+        </p>
+      </div>
     </div>
 
     <div class="logo-center">
@@ -149,104 +158,82 @@
     <div style="width: 120px;"></div>
   </header>
 
-  <div class="info-box">
-    <p>Hello I'm a new music producer and I just made this website for the new music producers. I have seen it is very expensive to buy beats nowadays that you wanna rap to, but on this website the price will never go over $20. No ads on the website – it's just click and buy. You can DM me if you want a custom beat! :)</p>
-  </div>
-
   <section class="beats">
 
-    <!-- New Beat -->
     <div class="beat">
-      <div class="beat-info">
-        <h2>Speed Drill Beat - Showcase</h2>
-        <div class="audio-player">
-          <audio controls>
-            <source src="beats/SpeedSC.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-          </audio>
-        </div>
+      <h2>Speed Drill Beat - Showcase</h2>
+      <div class="audio-player">
+        <audio controls>
+          <source src="beats/SpeedSC.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
       </div>
-      <div class="button-container">
+      <div class="buy-section">
         <a class="button" href="https://payhip.com/b/N2qtk" target="_blank">Buy - $10</a>
       </div>
     </div>
 
-    <!-- Old School Trap -->
     <div class="beat">
-      <div class="beat-info">
-        <h2>Old School Trap - Showcase</h2>
-        <div class="audio-player">
-          <audio controls>
-            <source src="beats/oldschooltrapSC.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-          </audio>
-        </div>
+      <h2>Old School Trap - Showcase</h2>
+      <div class="audio-player">
+        <audio controls>
+          <source src="beats/oldschooltrapSC.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
       </div>
-      <div class="button-container">
+      <div class="buy-section">
         <a class="button" href="https://payhip.com/b/PIeqf" target="_blank">Buy - $5</a>
       </div>
     </div>
 
-    <!-- Crazy One Trap -->
     <div class="beat">
-      <div class="beat-info">
-        <h2>Crazy One Trap - Showcase</h2>
-        <div class="audio-player">
-          <audio controls>
-            <source src="beats/CrazyOneTrapSC.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-          </audio>
-        </div>
+      <h2>Crazy One Trap - Showcase</h2>
+      <div class="audio-player">
+        <audio controls>
+          <source src="beats/CrazyOneTrapSC.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
       </div>
-      <div class="button-container">
+      <div class="buy-section">
         <a class="button" href="https://payhip.com/b/Mk2jR" target="_blank">Buy - $5</a>
       </div>
     </div>
 
-    <!-- Party Trap -->
     <div class="beat">
-      <div class="beat-info">
-        <h2>Party Trap - Showcase</h2>
-        <div class="audio-player">
-          <audio controls>
-            <source src="beats/PartyTrapSC.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-          </audio>
-        </div>
+      <h2>Party Trap - Showcase</h2>
+      <div class="audio-player">
+        <audio controls>
+          <source src="beats/PartyTrapSC.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
       </div>
-      <div class="button-container">
+      <div class="buy-section">
         <a class="button" href="https://payhip.com/b/y8aRv" target="_blank">Buy - $7</a>
       </div>
     </div>
 
-    <!-- Big Trapz -->
     <div class="beat">
-      <div class="beat-info">
-        <h2>Big Trapz - Showcase</h2>
-        <div class="audio-player">
-          <audio controls>
-            <source src="beats/BigTrapzSC.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-          </audio>
-        </div>
+      <h2>Big Trapz - Showcase</h2>
+      <div class="audio-player">
+        <audio controls>
+          <source src="beats/BigTrapzSC.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
       </div>
-      <div class="button-container">
+      <div class="buy-section">
         <a class="button" href="https://payhip.com/b/lmLbr" target="_blank">Buy - $15</a>
       </div>
     </div>
 
-    <!-- Juice WRLD Type Beat -->
     <div class="beat">
-      <div class="beat-info">
-        <h2>Juice WRLD Type Beat - Showcase</h2>
-        <div class="audio-player">
-          <audio controls>
-            <source src="beats/JuiceWrldTypeBeatSC.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-          </audio>
-        </div>
+      <h2>Juice Wrld Type Beat - Showcase</h2>
+      <div class="audio-player">
+        <audio controls>
+          <source src="beats/JuiceWrldTypeBeatSC.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
       </div>
-      <div class="button-container">
+      <div class="buy-section">
         <a class="button" href="https://payhip.com/b/0zfqk" target="_blank">Buy - $5</a>
       </div>
     </div>
