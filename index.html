@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom, #000000, #4b0082);
+      background: linear-gradient(to bottom, #000000, #2a2a2a, #6c00ff);
       color: #f0f0f0;
       display: flex;
       flex-direction: column;
@@ -18,53 +18,30 @@
 
     header {
       width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding: 1.5rem 2rem;
       background: #111;
-      position: relative;
+      padding: 1.5rem 0;
+      text-align: center;
     }
 
     .logo-left {
-      max-width: 280px;
-      height: auto;
+      max-width: 220px;
       transition: transform 0.1s ease-in-out;
-    }
-
-    .shake {
-      animation: shake 0.3s infinite;
-    }
-
-    @keyframes shake {
-      0% { transform: translateX(0); }
-      25% { transform: translateX(-3px); }
-      50% { transform: translateX(3px); }
-      75% { transform: translateX(-2px); }
-      100% { transform: translateX(2px); }
-    }
-
-    .logo-center {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      top: 1.5rem;
     }
 
     .insta-box {
       display: flex;
       align-items: center;
-      margin-bottom: 0.5rem;
+      margin-top: 0.8rem;
     }
 
     .logo-right {
-      max-width: 28px;
-      margin-right: 10px;
+      max-width: 24px;
+      margin-right: 8px;
     }
 
     .insta-handle {
       color: white;
-      font-weight: 700;
+      font-weight: 600;
       font-size: 1rem;
     }
 
@@ -74,7 +51,7 @@
       border-radius: 10px;
       margin-top: 1rem;
       width: 280px;
-      height: 180px;
+      height: auto;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -93,12 +70,12 @@
       flex-direction: column;
       gap: 1.5rem;
       width: 90%;
-      max-width: 700px;
+      max-width: 600px;
       margin-top: 2rem;
     }
 
     .beat {
-      background: rgba(42, 42, 42, 0.75);
+      background: rgba(42, 42, 42, 0.7);
       padding: 1rem;
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.4);
@@ -109,7 +86,7 @@
     .beat h2 {
       margin: 0 0 0.5rem 0;
       color: #a78bfd;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
     }
 
     .audio-player audio {
@@ -117,16 +94,12 @@
       outline: none;
     }
 
-    .buy-section {
-      display: flex;
-      justify-content: flex-end;
-      margin-top: 1.5rem;
-    }
-
     .button {
+      align-self: flex-end;
+      margin-top: 1.8rem;
       background: #a78bfd;
       color: white;
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 1rem;
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
@@ -134,7 +107,7 @@
     }
 
     .button:hover {
-      background: #8a6ddf;
+      background: #8f6ae9;
     }
 
     footer {
@@ -145,34 +118,40 @@
       text-align: center;
       width: 100%;
     }
+
+    .rotate {
+      animation: shake 0.3s ease-in-out;
+    }
+
+    @keyframes shake {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(3deg); }
+      50% { transform: rotate(0deg); }
+      75% { transform: rotate(-3deg); }
+      100% { transform: rotate(0deg); }
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <div>
-      <div class="insta-box">
-        <img src="InstagramLogo.png" alt="Instagram Logo" class="logo-right">
-        <span class="insta-handle">@JBeatzShop</span>
-      </div>
-      <div class="info-box">
-        <p>
-          Hello, I'm a new music producer and I just made this website for other new artists. 
-          Beats are expensive these days, but here they’ll never cost over $20. 
-          No ads – just click and buy. DM me for custom beats! :)
-        </p>
-      </div>
-    </div>
-
-    <div class="logo-center">
-      <img id="main-logo" src="JBeatsLogo.png" alt="JBeats Logo" class="logo-left">
-    </div>
-
-    <div style="width: 120px;"></div>
+    <img id="main-logo" src="JBeatsLogo.png" alt="JBeats Logo" class="logo-left">
   </header>
 
-  <section class="beats">
+  <div class="insta-box">
+    <img src="InstagramLogo.png" alt="Instagram Logo" class="logo-right">
+    <span class="insta-handle">@JBeatzShop</span>
+  </div>
 
+  <div class="info-box">
+    <p>
+      Hello, I'm a new music producer and I just made this website for other new artists.<br>
+      Beats are expensive these days, but here they’ll never cost over $20.<br>
+      No ads – just click and buy. DM me for custom beats! :)
+    </p>
+  </div>
+
+  <section class="beats">
     <div class="beat">
       <h2>Speed Drill Beat - Showcase</h2>
       <div class="audio-player">
@@ -180,9 +159,7 @@
           <source src="beats/SpeedSC.mp3" type="audio/mpeg">
         </audio>
       </div>
-      <div class="buy-section">
-        <a class="button" href="https://payhip.com/b/N2qtk" target="_blank">Buy - $10</a>
-      </div>
+      <a class="button" href="https://payhip.com/b/N2qtk" target="_blank">Buy - $10</a>
     </div>
 
     <div class="beat">
@@ -192,9 +169,7 @@
           <source src="beats/oldschooltrapSC.mp3" type="audio/mpeg">
         </audio>
       </div>
-      <div class="buy-section">
-        <a class="button" href="https://payhip.com/b/PIeqf" target="_blank">Buy - $5</a>
-      </div>
+      <a class="button" href="https://payhip.com/b/PIeqf" target="_blank">Buy - $5</a>
     </div>
 
     <div class="beat">
@@ -204,9 +179,7 @@
           <source src="beats/CrazyOneTrapSC.mp3" type="audio/mpeg">
         </audio>
       </div>
-      <div class="buy-section">
-        <a class="button" href="https://payhip.com/b/Mk2jR" target="_blank">Buy - $5</a>
-      </div>
+      <a class="button" href="https://payhip.com/b/Mk2jR" target="_blank">Buy - $5</a>
     </div>
 
     <div class="beat">
@@ -216,9 +189,7 @@
           <source src="beats/PartyTrapSC.mp3" type="audio/mpeg">
         </audio>
       </div>
-      <div class="buy-section">
-        <a class="button" href="https://payhip.com/b/y8aRv" target="_blank">Buy - $7</a>
-      </div>
+      <a class="button" href="https://payhip.com/b/y8aRv" target="_blank">Buy - $7</a>
     </div>
 
     <div class="beat">
@@ -228,23 +199,18 @@
           <source src="beats/BigTrapzSC.mp3" type="audio/mpeg">
         </audio>
       </div>
-      <div class="buy-section">
-        <a class="button" href="https://payhip.com/b/lmLbr" target="_blank">Buy - $15</a>
-      </div>
+      <a class="button" href="https://payhip.com/b/lmLbr" target="_blank">Buy - $15</a>
     </div>
 
     <div class="beat">
-      <h2>Juice Wrld Type Beat - Showcase</h2>
+      <h2>JuiceWrld Type Beat - Showcase</h2>
       <div class="audio-player">
         <audio controls>
           <source src="beats/JuiceWrldTypeBeatSC.mp3" type="audio/mpeg">
         </audio>
       </div>
-      <div class="buy-section">
-        <a class="button" href="https://payhip.com/b/0zfqk" target="_blank">Buy - $5</a>
-      </div>
+      <a class="button" href="https://payhip.com/b/0zfqk" target="_blank">Buy - $5</a>
     </div>
-
   </section>
 
   <footer>
@@ -256,19 +222,47 @@
     const logo = document.getElementById('main-logo');
 
     audios.forEach(audio => {
+      const context = new (window.AudioContext || window.webkitAudioContext)();
+      const src = context.createMediaElementSource(audio);
+      const analyser = context.createAnalyser();
+      analyser.fftSize = 256;
+      const bufferLength = analyser.frequencyBinCount;
+      const dataArray = new Uint8Array(bufferLength);
+
+      src.connect(analyser);
+      analyser.connect(context.destination);
+
+      let animationId;
+
+      const animate = () => {
+        analyser.getByteFrequencyData(dataArray);
+        let bass = 0;
+        for (let i = 0; i < 10; i++) {
+          bass += dataArray[i];
+        }
+        bass = bass / 10;
+
+        if (bass > 140) {
+          logo.classList.add('rotate');
+        } else {
+          logo.classList.remove('rotate');
+        }
+
+        animationId = requestAnimationFrame(animate);
+      };
+
       audio.addEventListener('play', () => {
-        logo.classList.add('shake');
-        audios.forEach(other => {
-          if (other !== audio) other.pause();
-        });
+        context.resume().then(() => animate());
       });
 
       audio.addEventListener('pause', () => {
-        logo.classList.remove('shake');
+        cancelAnimationFrame(animationId);
+        logo.classList.remove('rotate');
       });
 
       audio.addEventListener('ended', () => {
-        logo.classList.remove('shake');
+        cancelAnimationFrame(animationId);
+        logo.classList.remove('rotate');
       });
     });
   </script>
