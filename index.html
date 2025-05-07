@@ -29,6 +29,19 @@
     .logo-left {
       max-width: 280px;
       height: auto;
+      transition: transform 0.1s ease-in-out;
+    }
+
+    .shake {
+      animation: shake 0.3s infinite;
+    }
+
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-3px); }
+      50% { transform: translateX(3px); }
+      75% { transform: translateX(-2px); }
+      100% { transform: translateX(2px); }
     }
 
     .logo-center {
@@ -107,7 +120,7 @@
     .buy-section {
       display: flex;
       justify-content: flex-end;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
 
     .button {
@@ -152,7 +165,7 @@
     </div>
 
     <div class="logo-center">
-      <img src="JBeatsLogo.png" alt="JBeats Logo" class="logo-left">
+      <img id="main-logo" src="JBeatsLogo.png" alt="JBeats Logo" class="logo-left">
     </div>
 
     <div style="width: 120px;"></div>
@@ -165,7 +178,6 @@
       <div class="audio-player">
         <audio controls>
           <source src="beats/SpeedSC.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
         </audio>
       </div>
       <div class="buy-section">
@@ -178,7 +190,6 @@
       <div class="audio-player">
         <audio controls>
           <source src="beats/oldschooltrapSC.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
         </audio>
       </div>
       <div class="buy-section">
@@ -191,7 +202,6 @@
       <div class="audio-player">
         <audio controls>
           <source src="beats/CrazyOneTrapSC.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
         </audio>
       </div>
       <div class="buy-section">
@@ -204,7 +214,6 @@
       <div class="audio-player">
         <audio controls>
           <source src="beats/PartyTrapSC.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
         </audio>
       </div>
       <div class="buy-section">
@@ -217,7 +226,6 @@
       <div class="audio-player">
         <audio controls>
           <source src="beats/BigTrapzSC.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
         </audio>
       </div>
       <div class="buy-section">
@@ -230,7 +238,6 @@
       <div class="audio-player">
         <audio controls>
           <source src="beats/JuiceWrldTypeBeatSC.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
         </audio>
       </div>
       <div class="buy-section">
@@ -243,6 +250,28 @@
   <footer>
     &copy; 2025 JOnThebeatz
   </footer>
+
+  <script>
+    const audios = document.querySelectorAll('audio');
+    const logo = document.getElementById('main-logo');
+
+    audios.forEach(audio => {
+      audio.addEventListener('play', () => {
+        logo.classList.add('shake');
+        audios.forEach(other => {
+          if (other !== audio) other.pause();
+        });
+      });
+
+      audio.addEventListener('pause', () => {
+        logo.classList.remove('shake');
+      });
+
+      audio.addEventListener('ended', () => {
+        logo.classList.remove('shake');
+      });
+    });
+  </script>
 
 </body>
 </html>
