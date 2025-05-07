@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cheap Beats | JOnThebeatz</title>
+  <!-- WaveSurfer.js CDN -->
+  <script src="https://unpkg.com/wavesurfer.js"></script>
   <style>
     body {
       margin: 0;
@@ -19,7 +21,7 @@
     header {
       width: 100%;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       padding: 1.5rem 2rem;
       background: #111;
@@ -38,75 +40,9 @@
       transform: translateX(-50%);
     }
 
-    .beats {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      width: 90%;
-      max-width: 700px;
-      margin-top: 2rem;
-    }
-
-    .beat {
-      background: rgba(42, 42, 42, 0.6);
-      padding: 1rem;
-      border-radius: 10px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-    }
-
-    .beat-details {
-      flex: 1;
-    }
-
-    .beat h2 {
-      margin: 0 0 0.3rem 0;
-      color: #a78bfd;
-      font-size: 1.2rem;
-    }
-
-    .audio-player audio {
-      width: 100%;
-      outline: none;
-    }
-
-    .buy-section {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      margin-left: 1rem;
-    }
-
-    .button {
-      margin-top: 2rem;
-      background: #a78bfd;
-      color: white;
-      padding: 0.5rem 1rem;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-
-    .button:hover {
-      background: #8b5cf6;
-    }
-
-    .bottom-section {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem 1rem;
-    }
-
     .insta-box {
       display: flex;
       align-items: center;
-      margin-bottom: 1rem;
     }
 
     .logo-right {
@@ -123,15 +59,78 @@
     .info-box {
       background: rgba(42, 42, 42, 0.7);
       padding: 1rem;
-      margin-top: 1rem;
+      margin: 1rem 2rem 0 2rem;
       border-radius: 8px;
       max-width: 600px;
+      align-self: flex-start;
       font-size: 0.9rem;
-      text-align: left;
+    }
+
+    .beats {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 90%;
+      max-width: 700px;
+      margin-top: 2rem;
+    }
+
+    .beat {
+      background: rgba(42, 42, 42, 0.6);
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .beat h2 {
+      margin: 0 0 0.5rem 0;
+      color: #a78bfd;
+      font-size: 1.2rem;
+    }
+
+    .waveform {
+      width: 100%;
+      height: 80px;
+      margin-bottom: 0.5rem;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .play-button {
+      background: #a78bfd;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .play-button:hover {
+      background: #8b5cf6;
+    }
+
+    .button {
+      background: #a78bfd;
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background: #8b5cf6;
     }
 
     footer {
-      margin-top: 2rem;
+      margin-top: auto;
       padding: 1rem 0;
       font-size: 0.9rem;
       color: #888;
@@ -155,109 +154,85 @@
 <body>
 
   <header>
-    <div class="logo-center">
-      <img id="mainLogo" src="JBeatsLogo.png" alt="JBeats Logo" class="logo-left">
-    </div>
-  </header>
-
-  <section class="beats">
-    <div class="beat">
-      <div class="beat-details">
-        <h2>Speed Drill Beat - Showcase</h2>
-        <div class="audio-player">
-          <audio id="speedAudio" controls>
-            <source src="beats/SpeedSC.mp3" type="audio/mpeg">
-          </audio>
-        </div>
-      </div>
-      <div class="buy-section">
-        <a class="button" href="https://payhip.com/b/N2qtk" target="_blank">Buy - $10</a>
-      </div>
-    </div>
-
-    <div class="beat">
-      <div class="beat-details">
-        <h2>Old School Trap - Showcase</h2>
-        <div class="audio-player">
-          <audio controls>
-            <source src="beats/oldschooltrapSC.mp3" type="audio/mpeg">
-          </audio>
-        </div>
-      </div>
-      <div class="buy-section">
-        <a class="button" href="https://payhip.com/b/PIeqf" target="_blank">Buy - $5</a>
-      </div>
-    </div>
-
-    <div class="beat">
-      <div class="beat-details">
-        <h2>Crazy One Trap - Showcase</h2>
-        <div class="audio-player">
-          <audio controls>
-            <source src="beats/CrazyOneTrapSC.mp3" type="audio/mpeg">
-          </audio>
-        </div>
-      </div>
-      <div class="buy-section">
-        <a class="button" href="https://payhip.com/b/Mk2jR" target="_blank">Buy - $5</a>
-      </div>
-    </div>
-
-    <div class="beat">
-      <div class="beat-details">
-        <h2>Party Trap - Showcase</h2>
-        <div class="audio-player">
-          <audio controls>
-            <source src="beats/PartyTrapSC.mp3" type="audio/mpeg">
-          </audio>
-        </div>
-      </div>
-      <div class="buy-section">
-        <a class="button" href="https://payhip.com/b/y8aRv" target="_blank">Buy - $7</a>
-      </div>
-    </div>
-
-    <div class="beat">
-      <div class="beat-details">
-        <h2>Big Trapz - Showcase</h2>
-        <div class="audio-player">
-          <audio controls>
-            <source src="beats/BigTrapzSC.mp3" type="audio/mpeg">
-          </audio>
-        </div>
-      </div>
-      <div class="buy-section">
-        <a class="button" href="https://payhip.com/b/lmLbr" target="_blank">Buy - $15</a>
-      </div>
-    </div>
-
-    <div class="beat">
-      <div class="beat-details">
-        <h2>JuiceWrld Type Beat - Showcase</h2>
-        <div class="audio-player">
-          <audio controls>
-            <source src="beats/JuiceWrldTypeBeatSC.mp3" type="audio/mpeg">
-          </audio>
-        </div>
-      </div>
-      <div class="buy-section">
-        <a class="button" href="https://payhip.com/b/0zfqk" target="_blank">Buy - $5</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="bottom-section">
     <div class="insta-box">
       <img src="InstagramLogo.png" alt="Instagram Logo" class="logo-right">
       <span class="insta-handle">@JBeatzShop</span>
     </div>
 
-    <div class="info-box">
-      Hello I'm a new music producer and I just made this website for other new music producers.  
-      I’ve seen how expensive beats are nowadays, but here the price will never go over $20.  
-      No ads, just click and buy. DM me if you want a custom beat! :)
+    <div class="logo-center">
+      <img id="mainLogo" src="JBeatsLogo.png" alt="JBeats Logo" class="logo-left">
     </div>
+
+    <div style="width: 120px;"></div>
+  </header>
+
+  <div class="info-box">
+    Hello I'm a new music producer and I just made this website for other new music producers.  
+    I’ve seen how expensive beats are nowadays, but here the price will never go over $20.  
+    No ads, just click and buy. DM me if you want a custom beat! :)
   </div>
+
+  <section class="beats">
+    <!-- Speed Drill Beat -->
+    <div class="beat">
+      <h2>Speed Drill Beat - Showcase</h2>
+      <div id="waveform-speed" class="waveform"></div>
+      <div class="controls">
+        <button class="play-button" onclick="togglePlay('speed')">Play/Pause</button>
+        <a class="button" href="https://payhip.com/b/N2qtk" target="_blank">Buy - $10</a>
+      </div>
+    </div>
+
+    <!-- Old School Trap Beat -->
+    <div class="beat">
+      <h2>Old School Trap - Showcase</h2>
+      <div id="waveform-oldschool" class="waveform"></div>
+      <div class="controls">
+        <button class="play-button" onclick="togglePlay('oldschool')">Play/Pause</button>
+        <a class="button" href="https://payhip.com/b/PIeqf" target="_blank">Buy - $5</a>
+      </div>
+    </div>
+
+    <!-- Crazy One Trap Beat -->
+    <div class="beat">
+      <h2>Crazy One Trap - Showcase</h2>
+      <div id="waveform-crazyone" class="waveform"></div>
+      <div class="controls">
+        <button class="play-button" onclick="togglePlay('crazyone')">Play/Pause</button>
+        <a class="button" href="https://payhip.com/b/Mk2jR" target="_blank">Buy - $5</a>
+      </div>
+    </div>
+
+    <!-- Party Trap Beat -->
+    <div class="beat">
+      <h2>Party Trap - Showcase</h2>
+      <div id="waveform-partytrap" class="waveform"></div>
+      <div class="controls">
+        <button class="play-button" onclick="togglePlay('partytrap')">Play/Pause</button>
+        <a class="button" href="https://payhip.com/b/y8aRv" target="_blank">Buy - $7</a>
+      </div>
+    </div>
+
+    <!-- Big Trapz Beat -->
+    <div class="beat">
+      <h2>Big Trapz - Showcase</h2>
+      <div id="waveform-bigtrapz" class="waveform"></div>
+      <div class="controls">
+        <button class="play-button" onclick="togglePlay('bigtrapz')">Play/Pause</button>
+        <a class="button" href="https://payhip.com/b/lmLbr" target="_blank">Buy - $15</a>
+      </div>
+    </div>
+
+    <!-- Juice Wrld Type Beat -->
+    <div class="beat">
+      <h2>JuiceWrld Type Beat - Showcase</h2>
+      <div id="waveform-juicewrld" class="waveform"></div>
+      <div class="controls">
+        <button class="play-button" onclick="togglePlay('juicewrld')">Play/Pause</button>
+        <a class="button" href="https://payhip.com/b/0zfqk" target="_blank">Buy - $5</a>
+      </div>
+    </div>
+  </section>
 
   <footer>
     &copy; 2025 JOnThebeatz
@@ -265,45 +240,35 @@
 
   <script>
     const logo = document.getElementById('mainLogo');
-    const audioElements = document.querySelectorAll('audio');
+    const waveforms = {};
 
-    function shakeLogoOnBeat(audio) {
-      let audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      let analyser = audioContext.createAnalyser();
-      analyser.fftSize = 256;
-      let bufferLength = analyser.frequencyBinCount;
-      let dataArray = new Uint8Array(bufferLength);
-
-      let source = audioContext.createMediaElementSource(audio);
-      source.connect(analyser);
-      analyser.connect(audioContext.destination);
-
-      function detectBeat() {
-        analyser.getByteFrequencyData(dataArray);
-        const bass = dataArray.slice(0, 10);
-        const averageBass = bass.reduce((sum, value) => sum + value, 0) / bass.length;
-
-        if (averageBass > 150) {
-          logo.classList.add('shake');
-        } else {
-          logo.classList.remove('shake');
-        }
-
-        requestAnimationFrame(detectBeat);
-      }
-
-      audio.play();
-      audioContext.resume().then(() => {
-        detectBeat();
+    function createWaveform(id, file) {
+      const wavesurfer = WaveSurfer.create({
+        container: '#waveform-' + id,
+        waveColor: '#a78bfd',
+        progressColor: '#fff',
+        height: 80,
+        responsive: true,
+        barWidth: 2
       });
+      wavesurfer.load(file);
+      waveforms[id] = wavesurfer;
     }
 
-    audioElements.forEach(audio => {
-      audio.addEventListener('play', () => {
-        shakeLogoOnBeat(audio);
-      });
-    });
-  </script>
+    function togglePlay(id) {
+      const wavesurfer = waveforms[id];
+      if (wavesurfer) {
+        wavesurfer.playPause();
+      }
+    }
 
+    // Initialize waveforms
+    createWaveform('speed', 'beats/SpeedSC.mp3');
+    createWaveform('oldschool', 'beats/oldschooltrapSC.mp3');
+    createWaveform('crazyone', 'beats/CrazyOneTrapSC.mp3');
+    createWaveform('partytrap', 'beats/PartyTrapSC.mp3');
+    createWaveform('bigtrapz', 'beats/BigTrapzSC.mp3');
+    createWaveform('juicewrld', 'beats/JuiceWrldTypeBeatSC.mp3');
+  </script>
 </body>
 </html>
