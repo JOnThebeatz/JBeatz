@@ -19,30 +19,32 @@
     header {
       width: 100%;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       padding: 1.5rem 2rem;
       background: #111;
       position: relative;
-      z-index: 2;
     }
 
-    /* Center the logo in the header */
+    .logo-left {
+      max-width: 280px;
+      height: auto;
+      transition: transform 0.1s ease-in-out;
+    }
+
     .logo-center {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      max-width: 250px;
     }
 
     .insta-box {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
     }
 
     .logo-right {
-      max-width: 30px;
+      max-width: 28px;
       margin-right: 10px;
     }
 
@@ -139,53 +141,6 @@
     .shake {
       animation: shake 0.3s;
     }
-
-    /* Mobile-first styling */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem;
-      }
-
-      .logo-center {
-        max-width: 150px;
-        margin-top: 1rem;
-      }
-
-      .info-box {
-        margin-top: 1rem;
-        max-width: 100%;
-        align-self: center;
-      }
-
-      .beats {
-        width: 100%;
-        margin-top: 1rem;
-      }
-
-      .insta-box {
-        margin-bottom: 1rem;
-        justify-content: flex-start;
-      }
-
-      .buy-section {
-        margin-left: 0;
-        margin-top: 1rem;
-      }
-
-      .insta-handle {
-        font-size: 1rem;
-      }
-    }
-
-    /* Styling for larger screens (PC) */
-    @media (min-width: 769px) {
-      .logo-center {
-        position: relative;
-        transform: translateX(0);
-      }
-    }
   </style>
 </head>
 <body>
@@ -197,9 +152,17 @@
     </div>
 
     <div class="logo-center">
-      <img id="mainLogo" src="JBeatsLogo.png" alt="JBeats Logo">
+      <img id="mainLogo" src="JBeatsLogo.png" alt="JBeats Logo" class="logo-left">
     </div>
+
+    <div style="width: 120px;"></div>
   </header>
+
+  <div class="info-box">
+    Hello I'm a new music producer and I just made this website for other new music producers.  
+    I’ve seen how expensive beats are nowadays, but here the price will never go over $20.  
+    No ads, just click and buy. DM me if you want a custom beat! :)
+  </div>
 
   <section class="beats">
     <!-- Speed Drill Beat -->
@@ -222,8 +185,8 @@
       <div class="beat-details">
         <h2>Old School Trap - Showcase</h2>
         <div class="audio-player">
-          <audio controls>
-            <source src="beats/oldschooltrap.mp3" type="audio/mpeg">
+          <audio id="oldSchoolAudio" controls>
+            <source src="beats/oldschooltrapSC.mp3" type="audio/mpeg">
           </audio>
         </div>
       </div>
@@ -237,8 +200,8 @@
       <div class="beat-details">
         <h2>Crazy One Trap - Showcase</h2>
         <div class="audio-player">
-          <audio controls>
-            <source src="beats/CrazyOneTrap.mp3" type="audio/mpeg">
+          <audio id="crazyOneAudio" controls>
+            <source src="beats/CrazyOneTrapSC.mp3" type="audio/mpeg">
           </audio>
         </div>
       </div>
@@ -252,8 +215,8 @@
       <div class="beat-details">
         <h2>Party Trap - Showcase</h2>
         <div class="audio-player">
-          <audio controls>
-            <source src="beats/PartyTrap.mp3" type="audio/mpeg">
+          <audio id="partyTrapAudio" controls>
+            <source src="beats/PartyTrapSC.mp3" type="audio/mpeg">
           </audio>
         </div>
       </div>
@@ -267,8 +230,8 @@
       <div class="beat-details">
         <h2>Big Trapz - Showcase</h2>
         <div class="audio-player">
-          <audio controls>
-            <source src="beats/BigTrapz.mp3" type="audio/mpeg">
+          <audio id="bigTrapzAudio" controls>
+            <source src="beats/BigTrapzSC.mp3" type="audio/mpeg">
           </audio>
         </div>
       </div>
@@ -282,8 +245,8 @@
       <div class="beat-details">
         <h2>JuiceWrld Type Beat - Showcase</h2>
         <div class="audio-player">
-          <audio controls>
-            <source src="beats/JuiceWrldTypeBeat.mp3" type="audio/mpeg">
+          <audio id="juiceWrldAudio" controls>
+            <source src="beats/JuiceWrldTypeBeatSC.mp3" type="audio/mpeg">
           </audio>
         </div>
       </div>
@@ -291,13 +254,8 @@
         <a class="button" href="https://payhip.com/b/0zfqk" target="_blank">Buy - $5</a>
       </div>
     </div>
-  </section>
 
-  <div class="info-box">
-    Hello, I'm a new music producer and I just made this website for other new music producers.  
-    I’ve seen how expensive beats are nowadays, but here the price will never go over $20.  
-    No ads, just click and buy. DM me if you want a custom beat! :)
-  </div>
+  </section>
 
   <footer>
     &copy; 2025 JOnThebeatz
