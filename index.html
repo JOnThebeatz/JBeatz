@@ -5,31 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cheap Beats | JOnThebeatz</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
+      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom, #000000 0%, #6a0dad 100%);
-      color: #ffffff;
-      min-height: 100vh;
+      background: linear-gradient(to bottom, black, #6a0dad 50%, #6a0dad);
+      color: #f0f0f0;
       display: flex;
       flex-direction: column;
       align-items: center;
+      min-height: 100vh;
     }
 
     header {
       width: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      padding: 1.5rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 1.5rem 2rem;
+      background: #111;
       position: relative;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    }
+
+    .logo-left {
+      max-width: 280px;
+      height: auto;
     }
 
     .logo-center {
@@ -38,109 +37,100 @@
       transform: translateX(-50%);
     }
 
-    .logo-left {
-      max-width: 220px;
-      height: auto;
-    }
-
     .insta-box {
       display: flex;
       align-items: center;
-      gap: 8px;
     }
 
     .logo-right {
-      width: 26px;
+      max-width: 28px;
+      margin-right: 10px;
     }
 
     .insta-handle {
-      font-weight: 600;
+      color: white;
+      font-weight: 700;
       font-size: 1rem;
     }
 
     .info-box {
-      background: rgba(40, 40, 40, 0.6);
-      padding: 2rem;
-      width: 70%;
-      margin-top: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      background: rgba(42, 42, 42, 0.8);
+      padding: 1rem;
+      border-radius: 10px;
+      margin: 1.5rem;
+      max-width: 600px;
+      align-self: flex-start;
+      margin-left: 2rem;
+    }
+
+    .info-box p {
+      margin: 0;
+      font-size: 0.95rem;
       color: white;
-      font-size: 1rem;
-      text-align: left;
-      margin-left: 3rem;
     }
 
     .beats {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
-      width: 70%;
-      max-width: 800px;
-      margin-top: 3rem;
+      gap: 1.5rem;
+      width: 90%;
+      max-width: 700px;
+      margin-top: 1rem;
     }
 
     .beat {
-      background: rgba(40, 40, 40, 0.6);
-      padding: 1.5rem;
-      border-radius: 12px;
+      background: rgba(42, 42, 42, 0.7);
       display: flex;
-      flex-direction: row;
       justify-content: space-between;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s ease;
-    }
-
-    .beat:hover {
-      transform: scale(1.015);
+      align-items: center;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      flex-wrap: wrap;
     }
 
     .beat-info {
-      width: 60%;
+      flex: 1;
+      min-width: 250px;
     }
 
     .beat h2 {
-      margin-bottom: 0.75rem;
-      font-size: 1.5rem;
-      color: #b58afc;
+      margin: 0 0 0.5rem 0;
+      color: #a78bfd;
+      font-size: 1.2rem;
     }
 
     .audio-player audio {
       width: 100%;
-      border-radius: 8px;
-      background: #222;
-      margin-top: 1rem;
+      outline: none;
     }
 
     .button-container {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 10px;
-      justify-content: space-between;
-      text-align: right;
+      margin-left: 1.5rem;
+      margin-top: 1.5rem;
     }
 
     .button {
       background: #a78bfd;
       color: white;
-      padding: 0.6rem 1.2rem;
+      padding: 0.5rem 1.2rem;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 6px;
       font-weight: bold;
       transition: background 0.3s ease;
     }
 
     .button:hover {
-      background: #6a0dad;
+      background: #925bfd;
     }
 
     footer {
       margin-top: auto;
-      padding: 1rem;
+      padding: 1rem 0;
       font-size: 0.9rem;
       color: #888;
       text-align: center;
+      width: 100%;
     }
   </style>
 </head>
@@ -160,26 +150,12 @@
   </header>
 
   <div class="info-box">
-    <p>Hello I'm a new music producer and I just made this website for new music producers. I have seen that it is very expensive to buy beats these days if you want to rap, but on this website, the price will never go over $20. No ads, just click and buy. You can DM me if you want a custom beat! :)</p>
+    <p>Hello I'm a new music producer and I just made this website for the new music producers. I have seen it is very expensive to buy beats nowadays that you wanna rap to, but on this website the price will never go over $20. No ads on the website – it's just click and buy. You can DM me if you want a custom beat! :)</p>
   </div>
 
   <section class="beats">
-    <!-- New Beat: Juice WRLD Type -->
-    <div class="beat">
-      <div class="beat-info">
-        <h2>Juice WRLD Type Beat - Showcase</h2>
-        <div class="audio-player">
-          <audio controls>
-            <source src="beats/JuiceWrldTypeBeatSC.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-          </audio>
-        </div>
-      </div>
-      <div class="button-container">
-        <a class="button" href="https://payhip.com/b/0zfqk" target="_blank">Buy - $5</a>
-      </div>
-    </div>
 
+    <!-- New Beat -->
     <div class="beat">
       <div class="beat-info">
         <h2>Speed Drill Beat - Showcase</h2>
@@ -191,10 +167,11 @@
         </div>
       </div>
       <div class="button-container">
-        <a class="button" href="https://payhip.com/b/N2qtk" target="_blank">Buy - $5</a>
+        <a class="button" href="https://payhip.com/b/N2qtk" target="_blank">Buy - $10</a>
       </div>
     </div>
 
+    <!-- Old School Trap -->
     <div class="beat">
       <div class="beat-info">
         <h2>Old School Trap - Showcase</h2>
@@ -210,6 +187,7 @@
       </div>
     </div>
 
+    <!-- Crazy One Trap -->
     <div class="beat">
       <div class="beat-info">
         <h2>Crazy One Trap - Showcase</h2>
@@ -225,6 +203,7 @@
       </div>
     </div>
 
+    <!-- Party Trap -->
     <div class="beat">
       <div class="beat-info">
         <h2>Party Trap - Showcase</h2>
@@ -240,6 +219,7 @@
       </div>
     </div>
 
+    <!-- Big Trapz -->
     <div class="beat">
       <div class="beat-info">
         <h2>Big Trapz - Showcase</h2>
@@ -254,6 +234,23 @@
         <a class="button" href="https://payhip.com/b/lmLbr" target="_blank">Buy - $15</a>
       </div>
     </div>
+
+    <!-- Juice WRLD Type Beat -->
+    <div class="beat">
+      <div class="beat-info">
+        <h2>Juice WRLD Type Beat - Showcase</h2>
+        <div class="audio-player">
+          <audio controls>
+            <source src="beats/JuiceWrldTypeBeatSC.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+      <div class="button-container">
+        <a class="button" href="https://payhip.com/b/0zfqk" target="_blank">Buy - $5</a>
+      </div>
+    </div>
+
   </section>
 
   <footer>
