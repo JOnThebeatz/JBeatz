@@ -63,8 +63,8 @@
       display: flex;
       flex-direction: column;
       gap: 2rem;
-      width: 90%;
-      max-width: 700px;
+      width: 70%; /* Thinner width */
+      max-width: 800px;
       margin-top: 3rem;
     }
 
@@ -72,12 +72,19 @@
       background: rgba(40, 40, 40, 0.9);
       padding: 1.5rem;
       border-radius: 12px;
+      display: flex;
+      flex-direction: row; /* Side by side layout */
+      justify-content: space-between;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
       transition: transform 0.3s ease;
     }
 
     .beat:hover {
       transform: scale(1.015);
+    }
+
+    .beat-info {
+      width: 60%; /* Occupy most of the space */
     }
 
     .beat h2 {
@@ -90,18 +97,20 @@
       width: 100%;
       border-radius: 8px;
       background: #222;
+      margin-top: 1rem;
     }
 
     .button-container {
-      margin-top: 1rem;
       display: flex;
-      align-items: center;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: flex-end;
       gap: 10px;
+      justify-content: space-between;
+      text-align: right;
     }
 
     .button {
-      background: #28a745;
+      background: #a78bfd; /* Purple button */
       color: white;
       padding: 0.6rem 1.2rem;
       text-decoration: none;
@@ -112,7 +121,7 @@
     }
 
     .button:hover {
-      background: #218838;
+      background: #8a6be3; /* Slightly darker purple */
     }
 
     .small-text {
@@ -137,13 +146,17 @@
     }
 
     @media (max-width: 600px) {
-      .beat h2 {
-        font-size: 1.2rem;
+      .beat {
+        flex-direction: column; /* Stack on smaller screens */
+        align-items: center;
       }
 
       .button-container {
-        flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+      }
+
+      .audio-player audio {
+        width: 90%;
       }
 
       .insta-handle {
@@ -173,88 +186,94 @@
 
     <!-- New Speed Drill Beat Section -->
     <div class="beat">
-      <h2>Speed Drill Beat - Show Case</h2>
-      <div class="audio-player">
-        <audio controls>
-          <source src="beats/SpeedSC.mp3" type="audio/mpeg">
-        </audio>
+      <div class="beat-info">
+        <h2>Speed Drill Beat - Show Case</h2>
+        <div class="audio-player">
+          <audio controls>
+            <source src="beats/SpeedSC.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <p class="small-text">-- buy full beat here - dm instagram for custom beats :)</p>
       </div>
       <div class="button-container">
         <a class="button" href="https://payhip.com/b/N2qtk" target="_blank">Buy - $10</a>
-        <p class="small-text">-- buy full beat here - dm instagram for custom beats :)</p>
       </div>
-      <div class="line"></div>
     </div>
 
     <!-- Old School Trap Beat Section -->
     <div class="beat">
-      <h2>Old School Trap - Show Case</h2>
-      <div class="audio-player">
-        <audio controls>
-          <source src="beats/oldschooltrapSC.mp3" type="audio/mpeg">
-        </audio>
+      <div class="beat-info">
+        <h2>Old School Trap - Show Case</h2>
+        <div class="audio-player">
+          <audio controls>
+            <source src="beats/oldschooltrapSC.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <p class="small-text">-- buy full beat here - dm instagram for custom beats :)</p>
       </div>
       <div class="button-container">
         <a class="button" href="https://payhip.com/b/PIeqf" target="_blank">Buy - $5</a>
-        <p class="small-text">-- buy full beat here - dm instagram for custom beats :)</p>
       </div>
-      <div class="line"></div>
     </div>
 
     <div class="beat">
-      <h2>Crazy One Trap - Show Case</h2>
-      <div class="audio-player">
-        <audio controls>
-          <source src="beats/CrazyOneTrapSC.mp3" type="audio/mpeg">
-        </audio>
+      <div class="beat-info">
+        <h2>Crazy One Trap - Show Case</h2>
+        <div class="audio-player">
+          <audio controls>
+            <source src="beats/CrazyOneTrapSC.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <p class="small-text">-- buy full beat here - dm instagram for custom beats :)</p>
       </div>
       <div class="button-container">
         <a class="button" href="https://payhip.com/b/Mk2jR" target="_blank">Buy - $5</a>
-        <p class="small-text">-- buy full beat here - dm instagram for custom beats :)</p>
       </div>
-      <div class="line"></div>
     </div>
 
     <div class="beat">
-      <h2>Party Trap - Show Case</h2>
-      <div class="audio-player">
-        <audio controls>
-          <source src="beats/PartyTrapSC.mp3" type="audio/mpeg">
-        </audio>
+      <div class="beat-info">
+        <h2>Party Trap - Show Case</h2>
+        <div class="audio-player">
+          <audio controls>
+            <source src="beats/PartyTrapSC.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <p class="small-text">-- buy full beat here - dm instagram for custom beats :)</p>
       </div>
       <div class="button-container">
         <a class="button" href="https://payhip.com/b/y8aRv" target="_blank">Buy - $7</a>
-        <p class="small-text">-- buy full beat here - dm instagram for custom beats :)</p>
       </div>
-      <div class="line"></div>
     </div>
 
     <div class="beat">
-      <h2>Big Trapz - Show Case</h2>
-      <div class="audio-player">
-        <audio controls>
-          <source src="beats/BigTrapzSC.mp3" type="audio/mpeg">
-        </audio>
+      <div class="beat-info">
+        <h2>Big Trapz - Show Case</h2>
+        <div class="audio-player">
+          <audio controls>
+            <source src="beats/BigTrapzSC.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <p class="small-text">-- buy full beat here - dm instagram for custom beats :)</p>
       </div>
       <div class="button-container">
         <a class="button" href="https://payhip.com/b/lmLbr" target="_blank">Buy - $15</a>
-        <p class="small-text">-- buy full beat here - dm instagram for custom beats :)</p>
       </div>
-      <div class="line"></div>
     </div>
 
     <div class="beat">
-      <h2>Juice Wrld Type Beat - Show Case</h2>
-      <div class="audio-player">
-        <audio controls>
-          <source src="beats/JuiceWrldTypeBeatSC.mp3" type="audio/mpeg">
-        </audio>
+      <div class="beat-info">
+        <h2>Juice Wrld Type Beat - Show Case</h2>
+        <div class="audio-player">
+          <audio controls>
+            <source src="beats/JuiceWrldTypeBeatSC.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <p class="small-text">-- buy full beat here - dm instagram for custom beats :)</p>
       </div>
       <div class="button-container">
         <a class="button" href="https://payhip.com/b/0zfqk" target="_blank">Buy - $10</a>
-        <p class="small-text">-- buy full beat here - dm instagram for custom beats :)</p>
       </div>
-      <div class="line"></div>
     </div>
 
   </section>
