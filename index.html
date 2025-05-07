@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom, #000000, #2a2a2a, #6c00ff);
+      background: linear-gradient(to bottom, black, #6a0dad);
       color: #f0f0f0;
       display: flex;
       flex-direction: column;
@@ -18,51 +18,50 @@
 
     header {
       width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
       background: #111;
-      padding: 1.5rem 0;
-      text-align: center;
+      position: relative;
     }
 
     .logo-left {
-      max-width: 220px;
+      max-width: 280px;
+      height: auto;
       transition: transform 0.1s ease-in-out;
+    }
+
+    .logo-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .insta-box {
       display: flex;
       align-items: center;
-      margin-top: 0.8rem;
     }
 
     .logo-right {
-      max-width: 24px;
-      margin-right: 8px;
+      max-width: 28px;
+      margin-right: 10px;
     }
 
     .insta-handle {
       color: white;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 1rem;
     }
 
     .info-box {
-      background: rgba(42, 42, 42, 0.8);
+      background: rgba(42, 42, 42, 0.7);
       padding: 1rem;
-      border-radius: 10px;
-      margin-top: 1rem;
-      width: 280px;
-      height: auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .info-box p {
-      margin: 0;
-      font-size: 0.85rem;
-      color: white;
-      line-height: 1.4;
+      margin: 1rem 2rem 0 2rem;
+      border-radius: 8px;
+      max-width: 600px;
+      align-self: flex-start;
+      font-size: 0.9rem;
     }
 
     .beats {
@@ -70,21 +69,27 @@
       flex-direction: column;
       gap: 1.5rem;
       width: 90%;
-      max-width: 600px;
+      max-width: 700px;
       margin-top: 2rem;
     }
 
     .beat {
-      background: rgba(42, 42, 42, 0.7);
+      background: rgba(42, 42, 42, 0.6);
       padding: 1rem;
       border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .beat-details {
+      flex: 1;
     }
 
     .beat h2 {
-      margin: 0 0 0.5rem 0;
+      margin: 0 0 0.3rem 0;
       color: #a78bfd;
       font-size: 1.2rem;
     }
@@ -94,12 +99,18 @@
       outline: none;
     }
 
+    .buy-section {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-left: 1rem;
+    }
+
     .button {
-      align-self: flex-end;
-      margin-top: 1.8rem;
+      margin-top: 2rem;
       background: #a78bfd;
       color: white;
-      padding: 0.4rem 1rem;
+      padding: 0.5rem 1rem;
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
@@ -107,7 +118,7 @@
     }
 
     .button:hover {
-      background: #8f6ae9;
+      background: #8b5cf6;
     }
 
     footer {
@@ -119,97 +130,123 @@
       width: 100%;
     }
 
-    .rotate {
-      animation: shake 0.3s ease-in-out;
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-3px); }
+      100% { transform: translateX(0); }
     }
 
-    @keyframes shake {
-      0% { transform: rotate(0deg); }
-      25% { transform: rotate(3deg); }
-      50% { transform: rotate(0deg); }
-      75% { transform: rotate(-3deg); }
-      100% { transform: rotate(0deg); }
+    .shake {
+      animation: shake 0.2s infinite;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img id="main-logo" src="JBeatsLogo.png" alt="JBeats Logo" class="logo-left">
+    <div class="insta-box">
+      <img src="InstagramLogo.png" alt="Instagram Logo" class="logo-right">
+      <span class="insta-handle">@JBeatzShop</span>
+    </div>
+
+    <div class="logo-center">
+      <img id="mainLogo" src="JBeatsLogo.png" alt="JBeats Logo" class="logo-left">
+    </div>
+
+    <div style="width: 120px;"></div>
   </header>
 
-  <div class="insta-box">
-    <img src="InstagramLogo.png" alt="Instagram Logo" class="logo-right">
-    <span class="insta-handle">@JBeatzShop</span>
-  </div>
-
   <div class="info-box">
-    <p>
-      Hello, I'm a new music producer and I just made this website for other new artists.<br>
-      Beats are expensive these days, but here they’ll never cost over $20.<br>
-      No ads – just click and buy. DM me for custom beats! :)
-    </p>
+    Hello I'm a new music producer and I just made this website for other new music producers.  
+    I’ve seen how expensive beats are nowadays, but here the price will never go over $20.  
+    No ads, just click and buy. DM me if you want a custom beat! :)
   </div>
 
   <section class="beats">
     <div class="beat">
-      <h2>Speed Drill Beat - Showcase</h2>
-      <div class="audio-player">
-        <audio controls>
-          <source src="beats/SpeedSC.mp3" type="audio/mpeg">
-        </audio>
+      <div class="beat-details">
+        <h2>Speed Drill Beat - Showcase</h2>
+        <div class="audio-player">
+          <audio controls onplay="startShake()" onpause="stopShake()">
+            <source src="beats/SpeedSC.mp3" type="audio/mpeg">
+          </audio>
+        </div>
       </div>
-      <a class="button" href="https://payhip.com/b/N2qtk" target="_blank">Buy - $10</a>
+      <div class="buy-section">
+        <a class="button" href="https://payhip.com/b/N2qtk" target="_blank">Buy - $10</a>
+      </div>
     </div>
 
     <div class="beat">
-      <h2>Old School Trap - Showcase</h2>
-      <div class="audio-player">
-        <audio controls>
-          <source src="beats/oldschooltrapSC.mp3" type="audio/mpeg">
-        </audio>
+      <div class="beat-details">
+        <h2>Old School Trap - Showcase</h2>
+        <div class="audio-player">
+          <audio controls onplay="startShake()" onpause="stopShake()">
+            <source src="beats/oldschooltrapSC.mp3" type="audio/mpeg">
+          </audio>
+        </div>
       </div>
-      <a class="button" href="https://payhip.com/b/PIeqf" target="_blank">Buy - $5</a>
+      <div class="buy-section">
+        <a class="button" href="https://payhip.com/b/PIeqf" target="_blank">Buy - $5</a>
+      </div>
     </div>
 
     <div class="beat">
-      <h2>Crazy One Trap - Showcase</h2>
-      <div class="audio-player">
-        <audio controls>
-          <source src="beats/CrazyOneTrapSC.mp3" type="audio/mpeg">
-        </audio>
+      <div class="beat-details">
+        <h2>Crazy One Trap - Showcase</h2>
+        <div class="audio-player">
+          <audio controls onplay="startShake()" onpause="stopShake()">
+            <source src="beats/CrazyOneTrapSC.mp3" type="audio/mpeg">
+          </audio>
+        </div>
       </div>
-      <a class="button" href="https://payhip.com/b/Mk2jR" target="_blank">Buy - $5</a>
+      <div class="buy-section">
+        <a class="button" href="https://payhip.com/b/Mk2jR" target="_blank">Buy - $5</a>
+      </div>
     </div>
 
     <div class="beat">
-      <h2>Party Trap - Showcase</h2>
-      <div class="audio-player">
-        <audio controls>
-          <source src="beats/PartyTrapSC.mp3" type="audio/mpeg">
-        </audio>
+      <div class="beat-details">
+        <h2>Party Trap - Showcase</h2>
+        <div class="audio-player">
+          <audio controls onplay="startShake()" onpause="stopShake()">
+            <source src="beats/PartyTrapSC.mp3" type="audio/mpeg">
+          </audio>
+        </div>
       </div>
-      <a class="button" href="https://payhip.com/b/y8aRv" target="_blank">Buy - $7</a>
+      <div class="buy-section">
+        <a class="button" href="https://payhip.com/b/y8aRv" target="_blank">Buy - $7</a>
+      </div>
     </div>
 
     <div class="beat">
-      <h2>Big Trapz - Showcase</h2>
-      <div class="audio-player">
-        <audio controls>
-          <source src="beats/BigTrapzSC.mp3" type="audio/mpeg">
-        </audio>
+      <div class="beat-details">
+        <h2>Big Trapz - Showcase</h2>
+        <div class="audio-player">
+          <audio controls onplay="startShake()" onpause="stopShake()">
+            <source src="beats/BigTrapzSC.mp3" type="audio/mpeg">
+          </audio>
+        </div>
       </div>
-      <a class="button" href="https://payhip.com/b/lmLbr" target="_blank">Buy - $15</a>
+      <div class="buy-section">
+        <a class="button" href="https://payhip.com/b/lmLbr" target="_blank">Buy - $15</a>
+      </div>
     </div>
 
     <div class="beat">
-      <h2>JuiceWrld Type Beat - Showcase</h2>
-      <div class="audio-player">
-        <audio controls>
-          <source src="beats/JuiceWrldTypeBeatSC.mp3" type="audio/mpeg">
-        </audio>
+      <div class="beat-details">
+        <h2>Juice Wrld Type Beat - Showcase</h2>
+        <div class="audio-player">
+          <audio controls onplay="startShake()" onpause="stopShake()">
+            <source src="beats/JuiceWrldTypeBeatSC.mp3" type="audio/mpeg">
+          </audio>
+        </div>
       </div>
-      <a class="button" href="https://payhip.com/b/0zfqk" target="_blank">Buy - $5</a>
+      <div class="buy-section">
+        <a class="button" href="https://payhip.com/b/0zfqk" target="_blank">Buy - $5</a>
+      </div>
     </div>
   </section>
 
@@ -218,54 +255,15 @@
   </footer>
 
   <script>
-    const audios = document.querySelectorAll('audio');
-    const logo = document.getElementById('main-logo');
+    const logo = document.getElementById('mainLogo');
 
-    audios.forEach(audio => {
-      const context = new (window.AudioContext || window.webkitAudioContext)();
-      const src = context.createMediaElementSource(audio);
-      const analyser = context.createAnalyser();
-      analyser.fftSize = 256;
-      const bufferLength = analyser.frequencyBinCount;
-      const dataArray = new Uint8Array(bufferLength);
+    function startShake() {
+      logo.classList.add('shake');
+    }
 
-      src.connect(analyser);
-      analyser.connect(context.destination);
-
-      let animationId;
-
-      const animate = () => {
-        analyser.getByteFrequencyData(dataArray);
-        let bass = 0;
-        for (let i = 0; i < 10; i++) {
-          bass += dataArray[i];
-        }
-        bass = bass / 10;
-
-        if (bass > 140) {
-          logo.classList.add('rotate');
-        } else {
-          logo.classList.remove('rotate');
-        }
-
-        animationId = requestAnimationFrame(animate);
-      };
-
-      audio.addEventListener('play', () => {
-        context.resume().then(() => animate());
-      });
-
-      audio.addEventListener('pause', () => {
-        cancelAnimationFrame(animationId);
-        logo.classList.remove('rotate');
-      });
-
-      audio.addEventListener('ended', () => {
-        cancelAnimationFrame(animationId);
-        logo.classList.remove('rotate');
-      });
-    });
+    function stopShake() {
+      logo.classList.remove('shake');
+    }
   </script>
-
 </body>
 </html>
