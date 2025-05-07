@@ -141,6 +141,41 @@
     .shake {
       animation: shake 0.3s;
     }
+
+    /* Mobile-first styling */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+      }
+
+      .logo-center {
+        position: relative;
+        transform: translateX(0);
+      }
+
+      .info-box {
+        margin-top: 1rem;
+        max-width: 100%;
+        align-self: center;
+      }
+
+      .beats {
+        width: 100%;
+        margin-top: 1rem;
+      }
+
+      .insta-box {
+        margin-bottom: 1rem;
+        justify-content: flex-start;
+      }
+
+      .buy-section {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -154,15 +189,7 @@
     <div class="logo-center">
       <img id="mainLogo" src="JBeatsLogo.png" alt="JBeats Logo" class="logo-left">
     </div>
-
-    <div style="width: 120px;"></div>
   </header>
-
-  <div class="info-box">
-    Hello I'm a new music producer and I just made this website for other new music producers.  
-    I’ve seen how expensive beats are nowadays, but here the price will never go over $20.  
-    No ads, just click and buy. DM me if you want a custom beat! :)
-  </div>
 
   <section class="beats">
     <!-- Speed Drill Beat -->
@@ -254,8 +281,13 @@
         <a class="button" href="https://payhip.com/b/0zfqk" target="_blank">Buy - $5</a>
       </div>
     </div>
-
   </section>
+
+  <div class="info-box">
+    Hello, I'm a new music producer and I just made this website for other new music producers.  
+    I’ve seen how expensive beats are nowadays, but here the price will never go over $20.  
+    No ads, just click and buy. DM me if you want a custom beat! :)
+  </div>
 
   <footer>
     &copy; 2025 JOnThebeatz
@@ -269,42 +301,4 @@
     function shakeLogoOnBeat(audio) {
       let audioContext = new (window.AudioContext || window.webkitAudioContext)();
       let analyser = audioContext.createAnalyser();
-      analyser.fftSize = 256; // Size of frequency data
-      let bufferLength = analyser.frequencyBinCount;
-      let dataArray = new Uint8Array(bufferLength);
-
-      let source = audioContext.createMediaElementSource(audio);
-      source.connect(analyser);
-      analyser.connect(audioContext.destination);
-
-      // Detect beat every frame and shake logo if bass frequencies are high
-      function detectBeat() {
-        analyser.getByteFrequencyData(dataArray);
-        const bass = dataArray.slice(0, 10); // Lower frequencies (bass)
-        const averageBass = bass.reduce((sum, value) => sum + value, 0) / bass.length;
-
-        if (averageBass > 150) { // Adjust threshold for bass detection
-          logo.classList.add('shake');
-        } else {
-          logo.classList.remove('shake');
-        }
-
-        // Keep checking for the beat in real time
-        requestAnimationFrame(detectBeat);
-      }
-
-      audio.play();
-      audioContext.resume().then(() => {
-        detectBeat();
-      });
-    }
-
-    // Apply beat detection for each audio element
-    audioElements.forEach(audio => {
-      audio.addEventListener('play', () => {
-        shakeLogoOnBeat(audio);
-      });
-    });
-  </script>
-</body>
-</html>
+      analyser.fftSize = 256; // Size of frequency
