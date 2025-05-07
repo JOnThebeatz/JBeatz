@@ -131,15 +131,15 @@
     }
 
     @keyframes shake {
-      0% { transform: translateX(0); }
-      25% { transform: translateX(-5px); }
-      50% { transform: translateX(5px); }
-      75% { transform: translateX(-3px); }
-      100% { transform: translateX(0); }
+      0% { transform: translate(0, 0) rotate(0deg); }
+      25% { transform: translate(2px, -2px) rotate(-1deg); }
+      50% { transform: translate(-2px, 2px) rotate(1deg); }
+      75% { transform: translate(2px, 2px) rotate(0deg); }
+      100% { transform: translate(0, 0) rotate(-1deg); }
     }
 
     .shake {
-      animation: shake 0.2s infinite;
+      animation: shake 0.3s;
     }
   </style>
 </head>
@@ -169,7 +169,7 @@
       <div class="beat-details">
         <h2>Speed Drill Beat - Showcase</h2>
         <div class="audio-player">
-          <audio controls onplay="startShake()" onpause="stopShake()">
+          <audio controls>
             <source src="beats/SpeedSC.mp3" type="audio/mpeg">
           </audio>
         </div>
@@ -183,7 +183,7 @@
       <div class="beat-details">
         <h2>Old School Trap - Showcase</h2>
         <div class="audio-player">
-          <audio controls onplay="startShake()" onpause="stopShake()">
+          <audio controls>
             <source src="beats/oldschooltrapSC.mp3" type="audio/mpeg">
           </audio>
         </div>
@@ -197,7 +197,7 @@
       <div class="beat-details">
         <h2>Crazy One Trap - Showcase</h2>
         <div class="audio-player">
-          <audio controls onplay="startShake()" onpause="stopShake()">
+          <audio controls>
             <source src="beats/CrazyOneTrapSC.mp3" type="audio/mpeg">
           </audio>
         </div>
@@ -211,7 +211,7 @@
       <div class="beat-details">
         <h2>Party Trap - Showcase</h2>
         <div class="audio-player">
-          <audio controls onplay="startShake()" onpause="stopShake()">
+          <audio controls>
             <source src="beats/PartyTrapSC.mp3" type="audio/mpeg">
           </audio>
         </div>
@@ -225,7 +225,7 @@
       <div class="beat-details">
         <h2>Big Trapz - Showcase</h2>
         <div class="audio-player">
-          <audio controls onplay="startShake()" onpause="stopShake()">
+          <audio controls>
             <source src="beats/BigTrapzSC.mp3" type="audio/mpeg">
           </audio>
         </div>
@@ -239,7 +239,7 @@
       <div class="beat-details">
         <h2>Juice Wrld Type Beat - Showcase</h2>
         <div class="audio-player">
-          <audio controls onplay="startShake()" onpause="stopShake()">
+          <audio controls>
             <source src="beats/JuiceWrldTypeBeatSC.mp3" type="audio/mpeg">
           </audio>
         </div>
@@ -256,14 +256,34 @@
 
   <script>
     const logo = document.getElementById('mainLogo');
+    const audioElements = document.querySelectorAll('audio');
 
-    function startShake() {
-      logo.classList.add('shake');
-    }
+    audioElements.forEach(audio => {
+      let audioContext;
+      let analyser;
+      let source;
+      let dataArray;
+      let animationId;
 
-    function stopShake() {
-      logo.classList.remove('shake');
-    }
-  </script>
-</body>
-</html>
+      audio.addEventListener('play', () => {
+        if (!audioContext) {
+          audioContext = new (window.AudioContext || window.webkitAudioContext)();
+          analyser = audioContext.createAnalyser();
+          analyser.fftSize = 256;
+          const bufferLength = analyser.frequencyBinCount;
+          dataArray = new Uint8Array(bufferLength);
+
+          source = audioContext.createMediaElementSource(audio);
+          source.connect(analyser);
+          analyser.connect(audioContext.destination);
+        }
+
+        audioContext.resume().then(() => {
+          detectBeat();
+        });
+      });
+
+      audio.addEventListener('pause', () => {
+        cancel
+::contentReference[oaicite:16]{index=16}
+ 
