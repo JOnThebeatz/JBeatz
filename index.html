@@ -19,25 +19,49 @@
     header {
       width: 100%;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       padding: 1.5rem 2rem;
-      background: rgba(17, 17, 17, 0.6);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
+      background: #111;
       position: relative;
-    }
-
-    .logo-wrapper {
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.08), transparent);
-      padding: 2rem;
-      border-radius: 20px;
     }
 
     .logo-left {
       max-width: 280px;
       height: auto;
       transition: transform 0.1s ease-in-out;
+    }
+
+    .logo-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .insta-box {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-right {
+      max-width: 28px;
+      margin-right: 10px;
+    }
+
+    .insta-handle {
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .info-box {
+      background: rgba(42, 42, 42, 0.7);
+      padding: 1rem;
+      margin: 1rem 2rem 0 2rem;
+      border-radius: 8px;
+      max-width: 600px;
+      align-self: flex-start;
+      font-size: 0.9rem;
     }
 
     .beats {
@@ -50,7 +74,7 @@
     }
 
     .beat {
-      background: rgba(42, 42, 42, 0.95);
+      background: rgba(42, 42, 42, 0.6);
       padding: 1rem;
       border-radius: 10px;
       display: flex;
@@ -97,48 +121,13 @@
       background: #8b5cf6;
     }
 
-    .info-box {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
-      padding: 1rem;
-      margin: 1rem auto 0 auto;
-      border-radius: 8px;
-      max-width: 600px;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    .insta-box {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0.5rem 0 1rem 0;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 0.5rem 1rem;
-      border-radius: 10px;
-      backdrop-filter: blur(4px);
-    }
-
-    .logo-right {
-      max-width: 28px;
-      margin-right: 10px;
-    }
-
-    .insta-handle {
-      color: white;
-      font-weight: 700;
-      font-size: 1rem;
-    }
-
     footer {
+      margin-top: auto;
       padding: 1rem 0;
       font-size: 0.9rem;
       color: #888;
       text-align: center;
       width: 100%;
-      background: rgba(17, 17, 17, 0.4);
-      backdrop-filter: blur(4px);
     }
 
     @keyframes shake {
@@ -152,30 +141,31 @@
     .shake {
       animation: shake 0.3s;
     }
-
-    @media (max-width: 768px) {
-      .logo-left {
-        max-width: 200px;
-      }
-
-      header {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-      }
-    }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo-wrapper">
+    <div class="insta-box">
+      <img src="InstagramLogo.png" alt="Instagram Logo" class="logo-right">
+      <span class="insta-handle">@JBeatzShop</span>
+    </div>
+
+    <div class="logo-center">
       <img id="mainLogo" src="JBeatsLogo.png" alt="JBeats Logo" class="logo-left">
     </div>
+
+    <div style="width: 120px;"></div>
   </header>
 
+  <div class="info-box">
+    Hello I'm a new music producer and I just made this website for other new music producers.  
+    I’ve seen how expensive beats are nowadays, but here the price will never go over $20.  
+    No ads, just click and buy. DM me if you want a custom beat! :)
+  </div>
+
   <section class="beats">
-    <!-- Repeat this beat section for all your beats -->
+    <!-- Speed Drill Beat -->
     <div class="beat">
       <div class="beat-details">
         <h2>Speed Drill Beat - Showcase</h2>
@@ -190,20 +180,82 @@
       </div>
     </div>
 
-    <!-- Repeat for the rest of your beats... -->
+    <!-- Old School Trap Beat -->
+    <div class="beat">
+      <div class="beat-details">
+        <h2>Old School Trap - Showcase</h2>
+        <div class="audio-player">
+          <audio id="oldSchoolAudio" controls>
+            <source src="beats/oldschooltrapSC.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+      <div class="buy-section">
+        <a class="button" href="https://payhip.com/b/PIeqf" target="_blank">Buy - $5</a>
+      </div>
+    </div>
+
+    <!-- Crazy One Trap Beat -->
+    <div class="beat">
+      <div class="beat-details">
+        <h2>Crazy One Trap - Showcase</h2>
+        <div class="audio-player">
+          <audio id="crazyOneAudio" controls>
+            <source src="beats/CrazyOneTrapSC.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+      <div class="buy-section">
+        <a class="button" href="https://payhip.com/b/Mk2jR" target="_blank">Buy - $5</a>
+      </div>
+    </div>
+
+    <!-- Party Trap Beat -->
+    <div class="beat">
+      <div class="beat-details">
+        <h2>Party Trap - Showcase</h2>
+        <div class="audio-player">
+          <audio id="partyTrapAudio" controls>
+            <source src="beats/PartyTrapSC.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+      <div class="buy-section">
+        <a class="button" href="https://payhip.com/b/y8aRv" target="_blank">Buy - $7</a>
+      </div>
+    </div>
+
+    <!-- Big Trapz Beat -->
+    <div class="beat">
+      <div class="beat-details">
+        <h2>Big Trapz - Showcase</h2>
+        <div class="audio-player">
+          <audio id="bigTrapzAudio" controls>
+            <source src="beats/BigTrapzSC.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+      <div class="buy-section">
+        <a class="button" href="https://payhip.com/b/lmLbr" target="_blank">Buy - $15</a>
+      </div>
+    </div>
+
+    <!-- Juice Wrld Type Beat -->
+    <div class="beat">
+      <div class="beat-details">
+        <h2>JuiceWrld Type Beat - Showcase</h2>
+        <div class="audio-player">
+          <audio id="juiceWrldAudio" controls>
+            <source src="beats/JuiceWrldTypeBeatSC.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+      <div class="buy-section">
+        <a class="button" href="https://payhip.com/b/0zfqk" target="_blank">Buy - $5</a>
+      </div>
+    </div>
+
   </section>
-
-  <!-- Info and Instagram -->
-  <div class="info-box">
-    Hello I'm a new music producer and I just made this website for other new music producers.<br>
-    I’ve seen how expensive beats are nowadays, but here the price will never go over $20.<br>
-    No ads, just click and buy. DM me if you want a custom beat! :)
-  </div>
-
-  <div class="insta-box">
-    <img src="InstagramLogo.png" alt="Instagram Logo" class="logo-right">
-    <span class="insta-handle">@JBeatzShop</span>
-  </div>
 
   <footer>
     &copy; 2025 JOnThebeatz
@@ -213,6 +265,7 @@
     const logo = document.getElementById('mainLogo');
     const audioElements = document.querySelectorAll('audio');
 
+    // Function to shake logo on bass beat detection
     function shakeLogoOnBeat(audio) {
       let audioContext = new (window.AudioContext || window.webkitAudioContext)();
       let analyser = audioContext.createAnalyser();
@@ -226,29 +279,19 @@
 
       function detectBeat() {
         analyser.getByteFrequencyData(dataArray);
-        const bass = dataArray.slice(0, 10);
-        const averageBass = bass.reduce((sum, value) => sum + value, 0) / bass.length;
-
-        if (averageBass > 150) {
+        let sum = dataArray.reduce((a, b) => a + b, 0);
+        if (sum > 5000) { // Adjust this threshold for beat detection
           logo.classList.add('shake');
-        } else {
-          logo.classList.remove('shake');
+          setTimeout(() => logo.classList.remove('shake'), 300);
         }
-
         requestAnimationFrame(detectBeat);
       }
 
-      audio.play();
-      audioContext.resume().then(() => {
-        detectBeat();
-      });
+      detectBeat();
     }
 
-    audioElements.forEach(audio => {
-      audio.addEventListener('play', () => {
-        shakeLogoOnBeat(audio);
-      });
-    });
+    audioElements.forEach(audio => shakeLogoOnBeat(audio));
   </script>
+
 </body>
 </html>
