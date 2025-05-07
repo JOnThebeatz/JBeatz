@@ -19,49 +19,23 @@
     header {
       width: 100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       padding: 1.5rem 2rem;
       background: #111;
       position: relative;
     }
 
+    .logo-wrapper {
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), transparent);
+      padding: 2rem;
+      border-radius: 20px;
+    }
+
     .logo-left {
       max-width: 280px;
       height: auto;
       transition: transform 0.1s ease-in-out;
-    }
-
-    .logo-center {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .insta-box {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo-right {
-      max-width: 28px;
-      margin-right: 10px;
-    }
-
-    .insta-handle {
-      color: white;
-      font-weight: 700;
-      font-size: 1rem;
-    }
-
-    .info-box {
-      background: rgba(42, 42, 42, 0.7);
-      padding: 1rem;
-      margin: 1rem 2rem 0 2rem;
-      border-radius: 8px;
-      max-width: 600px;
-      align-self: flex-start;
-      font-size: 0.9rem;
     }
 
     .beats {
@@ -121,8 +95,35 @@
       background: #8b5cf6;
     }
 
+    .info-box {
+      background: rgba(42, 42, 42, 0.7);
+      padding: 1rem;
+      margin: 1rem auto 0 auto;
+      border-radius: 8px;
+      max-width: 600px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .insta-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0.5rem 0 1rem 0;
+    }
+
+    .logo-right {
+      max-width: 28px;
+      margin-right: 10px;
+    }
+
+    .insta-handle {
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
     footer {
-      margin-top: auto;
       padding: 1rem 0;
       font-size: 0.9rem;
       color: #888;
@@ -147,12 +148,6 @@
         max-width: 200px;
       }
 
-      .logo-center {
-        position: static;
-        transform: none;
-        margin: 0 auto;
-      }
-
       header {
         flex-direction: column;
         align-items: center;
@@ -164,14 +159,13 @@
 <body>
 
   <header>
-    <div class="logo-center">
+    <div class="logo-wrapper">
       <img id="mainLogo" src="JBeatsLogo.png" alt="JBeats Logo" class="logo-left">
     </div>
-    <div style="width: 100%; height: 1rem;"></div>
   </header>
 
   <section class="beats">
-    <!-- Speed Drill Beat -->
+    <!-- Beat list (unchanged) -->
     <div class="beat">
       <div class="beat-details">
         <h2>Speed Drill Beat - Showcase</h2>
@@ -186,7 +180,6 @@
       </div>
     </div>
 
-    <!-- Old School Trap Beat -->
     <div class="beat">
       <div class="beat-details">
         <h2>Old School Trap - Showcase</h2>
@@ -201,7 +194,6 @@
       </div>
     </div>
 
-    <!-- Crazy One Trap Beat -->
     <div class="beat">
       <div class="beat-details">
         <h2>Crazy One Trap - Showcase</h2>
@@ -216,7 +208,6 @@
       </div>
     </div>
 
-    <!-- Party Trap Beat -->
     <div class="beat">
       <div class="beat-details">
         <h2>Party Trap - Showcase</h2>
@@ -231,7 +222,6 @@
       </div>
     </div>
 
-    <!-- Big Trapz Beat -->
     <div class="beat">
       <div class="beat-details">
         <h2>Big Trapz - Showcase</h2>
@@ -246,7 +236,6 @@
       </div>
     </div>
 
-    <!-- Juice Wrld Type Beat -->
     <div class="beat">
       <div class="beat-details">
         <h2>JuiceWrld Type Beat - Showcase</h2>
@@ -262,14 +251,14 @@
     </div>
   </section>
 
-  <!-- MOVED TO BOTTOM -->
+  <!-- Info and Instagram at the bottom -->
   <div class="info-box">
-    Hello I'm a new music producer and I just made this website for other new music producers.  
-    I’ve seen how expensive beats are nowadays, but here the price will never go over $20.  
+    Hello I'm a new music producer and I just made this website for other new music producers.<br>
+    I’ve seen how expensive beats are nowadays, but here the price will never go over $20.<br>
     No ads, just click and buy. DM me if you want a custom beat! :)
   </div>
 
-  <div class="insta-box" style="margin: 1rem 0;">
+  <div class="insta-box">
     <img src="InstagramLogo.png" alt="Instagram Logo" class="logo-right">
     <span class="insta-handle">@JBeatzShop</span>
   </div>
@@ -303,6 +292,7 @@
         } else {
           logo.classList.remove('shake');
         }
+
         requestAnimationFrame(detectBeat);
       }
 
