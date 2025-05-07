@@ -255,6 +255,36 @@
       </div>
     </div>
 
+    <!-- Additional Beat 1 -->
+    <div class="beat">
+      <div class="beat-details">
+        <h2>Trap Vibes - Showcase</h2>
+        <div class="audio-player">
+          <audio id="trapVibesAudio" controls>
+            <source src="beats/TrapVibesSC.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+      <div class="buy-section">
+        <a class="button" href="https://payhip.com/b/xyz123" target="_blank">Buy - $8</a>
+      </div>
+    </div>
+
+    <!-- Additional Beat 2 -->
+    <div class="beat">
+      <div class="beat-details">
+        <h2>Chill Trap - Showcase</h2>
+        <div class="audio-player">
+          <audio id="chillTrapAudio" controls>
+            <source src="beats/ChillTrapSC.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+      <div class="buy-section">
+        <a class="button" href="https://payhip.com/b/abc456" target="_blank">Buy - $6</a>
+      </div>
+    </div>
+
   </section>
 
   <footer>
@@ -265,7 +295,6 @@
     const logo = document.getElementById('mainLogo');
     const audioElements = document.querySelectorAll('audio');
 
-    // Function to shake logo on bass beat detection
     function shakeLogoOnBeat(audio) {
       let audioContext = new (window.AudioContext || window.webkitAudioContext)();
       let analyser = audioContext.createAnalyser();
@@ -280,7 +309,7 @@
       function detectBeat() {
         analyser.getByteFrequencyData(dataArray);
         let sum = dataArray.reduce((a, b) => a + b, 0);
-        if (sum > 5000) { // Adjust this threshold for beat detection
+        if (sum > 5000) {
           logo.classList.add('shake');
           setTimeout(() => logo.classList.remove('shake'), 300);
         }
